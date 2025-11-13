@@ -1,0 +1,40 @@
+    # Redirects for fixing Google Search Console 404 errors
+    location = /free-reports {
+        return 301 /free-learning;
+    }
+    location = /services {
+        return 301 /;
+    }
+    location = /ai-solutions {
+        return 301 /ai-integration;
+    }
+    location = /web-development {
+        return 301 /websites-and-apps;
+    }
+    location = /digital-marketing-services {
+        return 301 /digital-marketing;
+    }
+    location = /portfolio {
+        return 301 /projects;
+    }
+    location = /testimonials {
+        return 301 /;
+    }
+    location = /resources {
+        return 301 /blog;
+    }
+    location = /careers {
+        return 301 /contact;
+    }
+    location = /partners {
+        return 301 /contact;
+    }
+    location = /case-studies {
+        return 301 /projects;
+    }
+    location = /get-started {
+        return 301 /contact;
+    }
+    location = /solutions {
+        return 301 /;
+    }

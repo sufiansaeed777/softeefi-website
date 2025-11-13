@@ -1,0 +1,206 @@
+/* Optimized Service Card CSS Module */
+
+/* Base Card Styles */
+.card,
+.cardCompact,
+.cardDetailed {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.cardCompact {
+  padding: 1.5rem;
+}
+
+.cardDetailed {
+  padding: 2.5rem;
+}
+
+/* Hover States */
+.card:hover,
+.cardCompact:hover,
+.cardDetailed:hover {
+  border-color: rgba(0, 255, 127, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 255, 127, 0.15);
+}
+
+/* Image Container */
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Icon Container */
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00ff7f 0%, #00cc63 100%);
+  border-radius: 15px;
+  font-size: 1.5rem;
+}
+
+.iconEmoji {
+  font-size: 2rem;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.cardCompact .title {
+  font-size: 1.25rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #8b949e;
+  font-size: 0.95rem;
+}
+
+.featureIcon {
+  color: #00ff7f;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+/* Price */
+.price {
+  margin-bottom: 1.5rem;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-bottom: 0.25rem;
+}
+
+.priceAmount {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00ff7f 0%, #00cc63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #00ff7f 0%, #00cc63 100%);
+  color: #0d1117;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 255, 127, 0.3);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Hover Overlay */
+.hoverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 255, 127, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card,
+  .cardCompact,
+  .cardDetailed {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+  
+  .imageContainer {
+    height: 150px;
+  }
+}

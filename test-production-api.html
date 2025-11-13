@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production API Test - Softeefi</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #00ff7f;
+            border-bottom: 2px solid #00ff7f;
+            padding-bottom: 10px;
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 127, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .success {
+            background: rgba(0, 255, 127, 0.1);
+            border: 1px solid #00ff7f;
+            color: #00ff7f;
+        }
+        .error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff4444;
+            color: #ff4444;
+        }
+        .warning {
+            background: rgba(255, 255, 0, 0.1);
+            border: 1px solid #ffaa00;
+            color: #ffaa00;
+        }
+        .info {
+            background: rgba(0, 150, 255, 0.1);
+            border: 1px solid #0096ff;
+            color: #0096ff;
+        }
+        button {
+            background: #00ff7f;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 5px;
+        }
+        button:hover {
+            background: #00e673;
+        }
+        .json-output {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .loading {
+            color: #ffaa00;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .api-key-section {
+            background: rgba(255, 0, 0, 0.05);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Softeefi Production API Test</h1>
+    
+    <div class="test-section">
+        <h2>📍 Environment Detection</h2>
+        <div id="env-results"></div>
+        <button onclick="detectEnvironment()">Detect Environment</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🏥 Health Check</h2>
+        <div id="health-results"></div>
+        <button onclick="testHealth()">Test Health Endpoint</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🤖 Gemini AI Test</h2>
+        <div>
+            <input type="text" id="gemini-question" placeholder="Enter a test question" value="What services does Softeefi offer?">
+            <button onclick="testGemini()">Test Gemini API</button>
+        </div>
+        <div id="gemini-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔥 OpenAI Test</h2>
+        <div>
+            <input type="text" id="openai-question" placeholder="Enter a test question" value="What is web development?">
+            <button onclick="testOpenAI()">Test OpenAI API</button>
+        </div>
+        <div id="openai-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>📧 Contact Form Test</h2>
+        <div>
+            <input type="text" id="contact-name" placeholder="Name" value="Test User">
+            <input type="email" id="contact-email" placeholder="Email" value="test@example.com">
+            <textarea id="contact-message" placeholder="Message">This is a test message from API tester</textarea>
+            <button onclick="testContact()">Test Contact API</button>
+        </div>
+        <div id="contact-results"></div>
+    </div>
+
+    <div class="api-key-section">
+        <h2>⚠️ API Key Status (Backend Check)</h2>
+        <div id="api-key-status"></div>
+        <button onclick="checkAPIKeys()">Check API Keys Configuration</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🔍 Full Diagnostic</h2>
+        <button onclick="runFullDiagnostic()">Run All Tests</button>
+        <div id="diagnostic-results"></div>
+    </div>
+
+    <script>
+        // Determine API base URL
+        function getAPIBaseURL() {
+            const hostname = window.location.hostname;
+            const protocol = window.location.protocol;
+            
+            if (hostname === 'localhost' || hostname === '127.0.0.1') {
+                return 'http://localhost:4000';
+            } else {
+                // Production - use same domain
+                return '';
+            }
+        }
+
+        const API_BASE = getAPIBaseURL();
+
+        function addResult(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            const result = document.createElement('div');
+            result.className = `test-result ${type}`;
+            result.innerHTML = message;
+            element.appendChild(result);
+        }
+
+        function clearResults(elementId) {
+            document.getElementById(elementId).innerHTML = '';
+        }
+
+        async function detectEnvironment() {
+            clearResults('env-results');
+            
+            addResult('env-results', `Current URL: ${window.location.href}`, 'info');
+            addResult('env-results', `Hostname: ${window.location.hostname}`, 'info');
+            addResult('env-results', `Protocol: ${window.location.protocol}`, 'info');
+            addResult('env-results', `API Base URL: ${API_BASE || 'Same domain (relative URLs)'}`, 'info');
+            
+            const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+            addResult('env-results', `Environment: ${isProduction ? 'PRODUCTION' : 'DEVELOPMENT'}`, isProduction ? 'warning' : 'success');
+        }
+
+        async function testHealth() {
+            clearResults('health-results');
+            addResult('health-results', '<span class="loading">Testing health endpoint...</span>', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/health`);
+                const data = await response.json();
+                
+                clearResults('health-results');
+                
+                if (response.ok) {
+                    addResult('health-results', '✅ Backend server is running!', 'success');
+                    addResult('health-results', `Server Status: ${data.status}`, 'success');
+                    addResult('health-results', `Database: ${data.database}`, data.database === 'connected' ? 'success' : 'warning');
+                    addResult('health-results', `<div class="json-output">${JSON.stringify(data, null, 2)}</div>`, 'info');
+                } else {
+                    addResult('health-results', `❌ Health check failed: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                clearResults('health-results');
+                addResult('health-results', `❌ Cannot connect to backend: ${error.message}`, 'error');
+                addResult('health-results', '🔧 Possible fixes:', 'warning');
+                addResult('health-results', '1. Check if backend server is running', 'warning');
+                addResult('health-results', '2. Check nginx/proxy configuration for /api routes', 'warning');
+                addResult('health-results', '3. Check CORS settings in backend', 'warning');
+            }
+        }
+
+        async function testGemini() {
+            clearResults('gemini-results');
+            const question = document.getElementById('gemini-question').value;
+            
+            if (!question) {
+                addResult('gemini-results', '❌ Please enter a question', 'error');
+                return;
+            }
+            
+            addResult('gemini-results', '<span class="loading">Testing Gemini API...</span>', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/gemini/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        service: 'Websites & Apps',
+                        systemPrompt: 'You are a helpful assistant. Answer briefly.'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                clearResults('gemini-results');
+                
+                if (data.success) {
+                    addResult('gemini-results', '✅ Gemini API is working!', 'success');
+                    addResult('gemini-results', `Response: ${data.response.substring(0, 200)}...`, 'success');
+                } else {
+                    addResult('gemini-results', `❌ Gemini API failed: ${data.error}`, 'error');
+                    if (data.errorCode) {
+                        addResult('gemini-results', `Error Code: ${data.errorCode}`, 'error');
+                    }
+                    
+                    // Provide specific fixes
+                    if (data.errorCode === 'API_KEY_MISSING') {
+                        addResult('gemini-results', '🔧 Fix: Add GEMINI_API_KEY to .env file on server', 'warning');
+                    } else if (data.errorCode === 'API_KEY_ERROR') {
+                        addResult('gemini-results', '🔧 Fix: Check if API key is valid and active', 'warning');
+                    } else if (data.errorCode === 'RATE_LIMIT') {
+                        addResult('gemini-results', '🔧 Fix: Wait a moment or check API quotas', 'warning');
+                    }
+                }
+                
+                addResult('gemini-results', `<div class="json-output">${JSON.stringify(data, null, 2)}</div>`, 'info');
+                
+            } catch (error) {
+                clearResults('gemini-results');
+                addResult('gemini-results', `❌ Request failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testOpenAI() {
+            clearResults('openai-results');
+            const question = document.getElementById('openai-question').value;
+            
+            if (!question) {
+                addResult('openai-results', '❌ Please enter a question', 'error');
+                return;
+            }
+            
+            addResult('openai-results', '<span class="loading">Testing OpenAI API...</span>', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/ai/ask`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        field: 'general',
+                        question: question
+                    })
+                });
+                
+                const data = await response.json();
+                
+                clearResults('openai-results');
+                
+                if (data.success) {
+                    addResult('openai-results', '✅ OpenAI API is working!', 'success');
+                    addResult('openai-results', `Response: ${data.response.substring(0, 200)}...`, 'success');
+                } else {
+                    addResult('openai-results', `❌ OpenAI API failed: ${data.error}`, 'error');
+                    if (data.fallback) {
+                        addResult('openai-results', '⚠️ Using fallback mode', 'warning');
+                    }
+                    if (data.errorCode) {
+                        addResult('openai-results', `Error Code: ${data.errorCode}`, 'error');
+                    }
+                }
+                
+                addResult('openai-results', `<div class="json-output">${JSON.stringify(data, null, 2)}</div>`, 'info');
+                
+            } catch (error) {
+                clearResults('openai-results');
+                addResult('openai-results', `❌ Request failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testContact() {
+            clearResults('contact-results');
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            
+            if (!name || !email || !message) {
+                addResult('contact-results', '❌ Please fill all fields', 'error');
+                return;
+            }
+            
+            addResult('contact-results', '<span class="loading">Testing Contact API...</span>', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message,
+                        phone: '1234567890'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                clearResults('contact-results');
+                
+                if (response.ok && data.success) {
+                    addResult('contact-results', '✅ Contact API is working!', 'success');
+                    addResult('contact-results', `Message: ${data.message}`, 'success');
+                } else {
+                    addResult('contact-results', `❌ Contact API failed: ${data.error || 'Unknown error'}`, 'error');
+                }
+                
+                addResult('contact-results', `<div class="json-output">${JSON.stringify(data, null, 2)}</div>`, 'info');
+                
+            } catch (error) {
+                clearResults('contact-results');
+                addResult('contact-results', `❌ Request failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function checkAPIKeys() {
+            clearResults('api-key-status');
+            addResult('api-key-status', '<span class="loading">Checking API keys configuration...</span>', 'info');
+            
+            // This endpoint would need to be added to your backend
+            // For now, we'll check indirectly through the API responses
+            
+            clearResults('api-key-status');
+            addResult('api-key-status', '📝 To check API keys on server:', 'info');
+            addResult('api-key-status', '1. SSH into your production server', 'warning');
+            addResult('api-key-status', '2. Run: cat /path/to/backend/.env | grep API_KEY', 'warning');
+            addResult('api-key-status', '3. Should see: GEMINI_API_KEY=your-key-here', 'warning');
+            addResult('api-key-status', '4. Should see: OPENAI_API_KEY=your-key-here (optional)', 'warning');
+            addResult('api-key-status', '', 'info');
+            addResult('api-key-status', '🔧 If missing, add to .env file and restart server:', 'info');
+            addResult('api-key-status', 'pm2 restart backend', 'info');
+        }
+
+        async function runFullDiagnostic() {
+            clearResults('diagnostic-results');
+            addResult('diagnostic-results', '<span class="loading">Running full diagnostic...</span>', 'info');
+            
+            // Run all tests
+            await detectEnvironment();
+            await testHealth();
+            await testGemini();
+            await testOpenAI();
+            
+            clearResults('diagnostic-results');
+            addResult('diagnostic-results', '✅ Full diagnostic complete! Check results above.', 'success');
+            
+            // Summary
+            const healthDiv = document.getElementById('health-results');
+            const geminiDiv = document.getElementById('gemini-results');
+            const openaiDiv = document.getElementById('openai-results');
+            
+            const healthOK = healthDiv.innerHTML.includes('✅');
+            const geminiOK = geminiDiv.innerHTML.includes('✅');
+            const openaiOK = openaiDiv.innerHTML.includes('✅');
+            
+            addResult('diagnostic-results', '<h3>Summary:</h3>', 'info');
+            addResult('diagnostic-results', `Backend Server: ${healthOK ? '✅ Working' : '❌ Not reachable'}`, healthOK ? 'success' : 'error');
+            addResult('diagnostic-results', `Gemini AI: ${geminiOK ? '✅ Working' : '❌ Not working'}`, geminiOK ? 'success' : 'error');
+            addResult('diagnostic-results', `OpenAI: ${openaiOK ? '✅ Working' : '❌ Not working'}`, openaiOK ? 'success' : 'error');
+            
+            if (!healthOK) {
+                addResult('diagnostic-results', '', 'info');
+                addResult('diagnostic-results', '🔴 Critical: Backend server not reachable!', 'error');
+                addResult('diagnostic-results', 'Fix this first before checking APIs', 'error');
+            } else if (!geminiOK) {
+                addResult('diagnostic-results', '', 'info');
+                addResult('diagnostic-results', '⚠️ Gemini API not configured on server', 'warning');
+                addResult('diagnostic-results', 'Add GEMINI_API_KEY to production .env file', 'warning');
+            }
+        }
+
+        // Auto-detect environment on load
+        window.onload = () => {
+            detectEnvironment();
+        };
+    </script>
+</body>
+</html>

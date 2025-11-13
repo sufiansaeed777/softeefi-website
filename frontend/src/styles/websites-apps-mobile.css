@@ -1,0 +1,203 @@
+/* Mobile optimizations for Websites & Apps page */
+
+/* General mobile optimizations */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize animations for mobile */
+  * {
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Fix text overflow issues */
+  h1, h2, h3, h4, h5, h6, p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Optimize images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better scrolling */
+  .service-card, .portfolio-item, .team-member {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure buttons are full width on mobile */
+  .cta-buttons button,
+  .cta-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Fix grid layouts */
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem;
+  }
+
+  /* Optimize card hover states for touch */
+  .service-card:active,
+  .portfolio-item:active {
+    transform: scale(0.98);
+  }
+
+  /* Remove hover effects on mobile */
+  @media (hover: none) {
+    .service-card:hover,
+    .portfolio-item:hover {
+      transform: none !important;
+    }
+  }
+
+  /* Fix padding and margins */
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Optimize font sizes */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+
+  .card-title {
+    font-size: clamp(1.1rem, 4vw, 1.3rem) !important;
+  }
+
+  .body-text {
+    font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  }
+
+  /* Fix team member grid */
+  .team-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Optimize process steps for mobile */
+  .process-step {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  /* Fix CTA section */
+  .cta-section {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Ensure proper spacing */
+  .mb-mobile {
+    margin-bottom: 1rem !important;
+  }
+
+  .mt-mobile {
+    margin-top: 1rem !important;
+  }
+
+  /* Fix overflow issues */
+  .overflow-hidden-mobile {
+    overflow: hidden !important;
+  }
+
+  /* Optimize performance */
+  .no-animation-mobile {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  /* Even smaller font sizes for very small screens */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  p {
+    font-size: 0.875rem !important;
+  }
+
+  /* Reduce padding further */
+  section {
+    padding: 1.5rem 0.75rem !important;
+  }
+
+  /* Smaller buttons */
+  button, a.button {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Reduce hero height in landscape */
+  .hero-section {
+    min-height: 70vh !important;
+  }
+
+  /* Adjust grid for landscape */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  /* Larger touch targets */
+  button, a, input, select, textarea {
+    min-height: 48px;
+  }
+
+  /* Remove hover states */
+  *:hover {
+    transform: none !important;
+  }
+}
+
+/* High DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp borders */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

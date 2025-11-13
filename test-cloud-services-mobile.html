@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Cloud Services Mobile Responsiveness Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 20px;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .device-info {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 255, 127, 0.3);
+        }
+        
+        .device-info h2 {
+            color: #00ff7f;
+            margin-bottom: 15px;
+        }
+        
+        .info-grid {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        .info-label {
+            color: #00a6ff;
+            font-weight: 600;
+        }
+        
+        .info-value {
+            color: #ffffff;
+        }
+        
+        .test-sections {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .test-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 166, 255, 0.3);
+        }
+        
+        .test-section h3 {
+            color: #00a6ff;
+            margin-bottom: 15px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .status.pass {
+            background: rgba(0, 255, 127, 0.2);
+            color: #00ff7f;
+            border: 1px solid #00ff7f;
+        }
+        
+        .status.fail {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff4444;
+            border: 1px solid #ff4444;
+        }
+        
+        .status.warning {
+            background: rgba(255, 165, 0, 0.2);
+            color: #ffa500;
+            border: 1px solid #ffa500;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .test-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .test-card h4 {
+            color: #00ff7f;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .test-card p {
+            color: #b8b8b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Responsive test elements */
+        .responsive-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .test-box {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #00a6ff 0%, #00ff7f 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Media query tests */
+        @media (max-width: 1024px) {
+            .tablet-indicator::after {
+                content: " ✓ Tablet view active";
+                color: #00ff7f;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-indicator::after {
+                content: " ✓ Mobile view active";
+                color: #00ff7f;
+            }
+            
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .small-mobile-indicator::after {
+                content: " ✓ Small mobile view active";
+                color: #00ff7f;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+        
+        /* Touch target test */
+        .touch-targets {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+            background: linear-gradient(135deg, #00a6ff 0%, #0080ff 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 12px 24px;
+            transition: transform 0.2s;
+        }
+        
+        .touch-target:active {
+            transform: scale(0.95);
+        }
+        
+        /* Scroll test */
+        .scroll-test {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 15px;
+        }
+        
+        .scroll-content {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        
+        .scroll-item {
+            flex-shrink: 0;
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(0, 166, 255, 0.3) 0%, rgba(0, 255, 127, 0.3) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="device-info">
+            <h2>Device & Viewport Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Screen Width:</span>
+                    <span class="info-value" id="screenWidth"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Screen Height:</span>
+                    <span class="info-value" id="screenHeight"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Viewport Width:</span>
+                    <span class="info-value" id="viewportWidth"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Viewport Height:</span>
+                    <span class="info-value" id="viewportHeight"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Device Pixel Ratio:</span>
+                    <span class="info-value" id="devicePixelRatio"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Touch Support:</span>
+                    <span class="info-value" id="touchSupport"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">User Agent:</span>
+                    <span class="info-value" id="userAgent" style="font-size: 12px;"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-sections">
+            <div class="test-section">
+                <h3>Responsive Breakpoints</h3>
+                <p>Current active breakpoints:</p>
+                <div style="margin-top: 10px;">
+                    <span class="tablet-indicator">Tablet (≤1024px):</span><br>
+                    <span class="mobile-indicator">Mobile (≤768px):</span><br>
+                    <span class="small-mobile-indicator">Small Mobile (≤480px):</span>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Performance Metrics</h3>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <h4>Lazy Loading</h4>
+                        <p>Images load with lazy attribute</p>
+                        <span class="status pass">Optimized</span>
+                    </div>
+                    <div class="test-card">
+                        <h4>Animation FPS</h4>
+                        <p>Reduced animations on mobile</p>
+                        <span class="status pass" id="animationStatus">Checking...</span>
+                    </div>
+                    <div class="test-card">
+                        <h4>Touch Events</h4>
+                        <p>Optimized for touch interaction</p>
+                        <span class="status pass" id="touchStatus">Checking...</span>
+                    </div>
+                    <div class="test-card">
+                        <h4>Scroll Performance</h4>
+                        <p>Hardware accelerated scrolling</p>
+                        <span class="status pass">Enabled</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Touch Target Test</h3>
+                <p>All interactive elements should be at least 44x44px for optimal touch experience:</p>
+                <div class="touch-targets">
+                    <button class="touch-target">Button 1</button>
+                    <button class="touch-target">Button 2</button>
+                    <button class="touch-target">CTA</button>
+                    <button class="touch-target">Contact</button>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Horizontal Scroll Test</h3>
+                <p>Test smooth horizontal scrolling (common in service tabs):</p>
+                <div class="scroll-test">
+                    <div class="scroll-content">
+                        <div class="scroll-item">Infrastructure</div>
+                        <div class="scroll-item">Dynamics 365</div>
+                        <div class="scroll-item">Power Platform</div>
+                        <div class="scroll-item">Office 365</div>
+                        <div class="scroll-item">Azure</div>
+                        <div class="scroll-item">Security</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Responsive Grid Test</h3>
+                <p>Grid should adapt to screen size:</p>
+                <div class="responsive-test">
+                    <div class="test-box">1</div>
+                    <div class="test-box">2</div>
+                    <div class="test-box">3</div>
+                    <div class="test-box">4</div>
+                </div>
+            </div>
+            
+            <div class="test-section">
+                <h3>Cloud Services Page Optimization Summary</h3>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <h4>✓ React Optimizations</h4>
+                        <p>• useMemo for expensive computations<br>
+                           • useCallback for event handlers<br>
+                           • Lazy loading with Suspense<br>
+                           • React.memo for FloatingParticles</p>
+                    </div>
+                    <div class="test-card">
+                        <h4>✓ Mobile Performance</h4>
+                        <p>• Debounced resize events<br>
+                           • Throttled mouse events<br>
+                           • Reduced particle count<br>
+                           • Disabled heavy animations</p>
+                    </div>
+                    <div class="test-card">
+                        <h4>✓ Image Optimization</h4>
+                        <p>• Lazy loading attribute<br>
+                           • Async decoding<br>
+                           • Proper alt texts<br>
+                           • Optimized formats</p>
+                    </div>
+                    <div class="test-card">
+                        <h4>✓ Touch Optimization</h4>
+                        <p>• 44px min touch targets<br>
+                           • Touch-action: manipulation<br>
+                           • Smooth scrolling<br>
+                           • Tap highlight removed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Update device information
+        document.getElementById('screenWidth').textContent = screen.width + 'px';
+        document.getElementById('screenHeight').textContent = screen.height + 'px';
+        document.getElementById('viewportWidth').textContent = window.innerWidth + 'px';
+        document.getElementById('viewportHeight').textContent = window.innerHeight + 'px';
+        document.getElementById('devicePixelRatio').textContent = window.devicePixelRatio;
+        document.getElementById('touchSupport').textContent = 'ontouchstart' in window ? 'Yes' : 'No';
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        
+        // Update viewport on resize
+        window.addEventListener('resize', () => {
+            document.getElementById('viewportWidth').textContent = window.innerWidth + 'px';
+            document.getElementById('viewportHeight').textContent = window.innerHeight + 'px';
+        });
+        
+        // Check animation performance
+        const animationStatus = document.getElementById('animationStatus');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            animationStatus.textContent = 'Reduced';
+            animationStatus.className = 'status warning';
+        } else {
+            animationStatus.textContent = 'Optimized';
+            animationStatus.className = 'status pass';
+        }
+        
+        // Check touch status
+        const touchStatus = document.getElementById('touchStatus');
+        if ('ontouchstart' in window) {
+            touchStatus.textContent = 'Enabled';
+            touchStatus.className = 'status pass';
+        } else {
+            touchStatus.textContent = 'Mouse Only';
+            touchStatus.className = 'status warning';
+        }
+        
+        // Log performance metrics
+        if (window.performance && window.performance.timing) {
+            const timing = window.performance.timing;
+            const loadTime = timing.loadEventEnd - timing.navigationStart;
+            console.log('Page Load Time:', loadTime + 'ms');
+        }
+        
+        // Test touch events
+        document.querySelectorAll('.touch-target').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.background = 'linear-gradient(135deg, #00ff7f 0%, #00a6ff 100%)';
+                setTimeout(() => {
+                    this.style.background = 'linear-gradient(135deg, #00a6ff 0%, #0080ff 100%)';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

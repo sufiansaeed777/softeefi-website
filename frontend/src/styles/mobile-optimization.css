@@ -1,0 +1,338 @@
+/* Mobile Optimization Styles
+   ========================= */
+
+/* Base Mobile Styles */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Container adjustments */
+  .container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  /* Typography scaling */
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Button optimizations */
+  button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Form inputs */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* Touch-friendly spacing */
+  a, button, .clickable {
+    margin: 8px 0;
+  }
+
+  /* Image optimization */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Grid and flex adjustments */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  /* Card and section spacing */
+  .card, .section {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+  }
+
+  /* Modal adjustments */
+  .modal {
+    width: 95%;
+    max-width: none;
+    margin: 10px;
+  }
+
+  /* Table responsiveness */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Hide non-essential elements */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Show mobile-only elements */
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  *:hover {
+    transition: none !important;
+  }
+
+  /* Increase tap targets */
+  a, button, [role="button"] {
+    position: relative;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Add active states for better feedback */
+  a:active, button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+/* Navbar mobile styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+    z-index: 1002;
+  }
+
+  .navbar-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 17, 23, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 5rem 2rem 2rem;
+    overflow-y: auto;
+    z-index: 1001;
+  }
+
+  .navbar-mobile-menu a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Landing page mobile optimization */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Service pages mobile optimization */
+@media (max-width: 768px) {
+  .service-hero {
+    padding: 3rem 1rem;
+  }
+
+  .service-features {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pricing-card {
+    max-width: 100%;
+  }
+}
+
+/* Contact form mobile optimization */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .form-group {
+    width: 100%;
+  }
+}
+
+/* Footer mobile optimization */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Modern mobile devices can handle animations well */
+@media (max-width: 768px) {
+  /* Keep smooth transitions */
+  *, *::before, *::after {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Enable hardware acceleration */
+  .animated {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Ensure smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keep animations smooth */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Don't reduce animation durations */
+  .motion-safe:target {
+    animation: fadeIn 0.6s ease-out;
+  }
+}
+
+/* Utility classes for mobile */
+.mobile-center {
+  text-align: center !important;
+}
+
+.mobile-full-width {
+  width: 100% !important;
+}
+
+.mobile-stack {
+  flex-direction: column !important;
+}
+
+.mobile-hide {
+  display: none !important;
+}
+
+.mobile-show {
+  display: block !important;
+}
+
+/* Safe area insets for modern phones */
+@supports (padding: max(0px)) {
+  .safe-area-inset {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

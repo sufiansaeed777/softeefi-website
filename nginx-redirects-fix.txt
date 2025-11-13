@@ -1,0 +1,47 @@
+# Add these redirects BEFORE the "location / {" block in your nginx config
+
+# Redirects for fixing Google Search Console 404 errors
+location = /free-reports {
+    return 301 https://softeefi.co.uk/free-learning;
+}
+location = /services {
+    return 301 https://softeefi.co.uk/;
+}
+location = /ai-solutions {
+    return 301 https://softeefi.co.uk/ai-integration;
+}
+location = /web-development {
+    return 301 https://softeefi.co.uk/websites-and-apps;
+}
+location = /digital-marketing-services {
+    return 301 https://softeefi.co.uk/digital-marketing;
+}
+location = /portfolio {
+    return 301 https://softeefi.co.uk/projects;
+}
+location = /testimonials {
+    return 301 https://softeefi.co.uk/;
+}
+location = /resources {
+    return 301 https://softeefi.co.uk/blog;
+}
+location = /careers {
+    return 301 https://softeefi.co.uk/contact;
+}
+location = /partners {
+    return 301 https://softeefi.co.uk/contact;
+}
+location = /case-studies {
+    return 301 https://softeefi.co.uk/projects;
+}
+location = /get-started {
+    return 301 https://softeefi.co.uk/contact;
+}
+location = /solutions {
+    return 301 https://softeefi.co.uk/;
+}
+
+# This should come AFTER all the redirects above
+location / {
+    # your existing location / configuration
+}

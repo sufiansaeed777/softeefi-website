@@ -1,0 +1,371 @@
+/* Base CSS Module - Core styles for all components */
+
+/* ============================================
+   LAYOUT SYSTEM
+   ============================================ */
+.page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionMobile {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.containerMd {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.containerSm {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Dark Sections */
+.sectionDark {
+  composes: section;
+  background: #0d1117;
+}
+
+.sectionGradient {
+  composes: section;
+  background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(10,10,10,1) 100%);
+}
+
+.sectionHero {
+  composes: section;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(ellipse at center top, rgba(0, 255, 127, 0.1) 0%, transparent 50%),
+              linear-gradient(180deg, #0a0a0a 0%, #0d1117 100%);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.heading {
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+}
+
+.headingXxl {
+  composes: heading;
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.headingXl {
+  composes: heading;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.headingLg {
+  composes: heading;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.headingMd {
+  composes: heading;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.headingSm {
+  composes: heading;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.headingGradient {
+  background: linear-gradient(135deg, #00ff7f 0%, #00cc63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin: 0 0 1.5rem 0;
+}
+
+.paragraphLg {
+  composes: paragraph;
+  font-size: 1.3rem;
+}
+
+.paragraphSm {
+  composes: paragraph;
+  font-size: 0.95rem;
+}
+
+.textMuted {
+  color: #888;
+}
+
+.textWhite {
+  color: #ffffff;
+}
+
+.textGreen {
+  color: #00ff7f;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textRight {
+  text-align: right;
+}
+
+/* ============================================
+   GRID SYSTEM
+   ============================================ */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid2 {
+  composes: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3 {
+  composes: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid4 {
+  composes: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gridAuto {
+  composes: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gridAutoSm {
+  composes: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ============================================
+   FLEXBOX
+   ============================================ */
+.flex {
+  display: flex;
+}
+
+.flexCenter {
+  composes: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  composes: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexStart {
+  composes: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flexEnd {
+  composes: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flexColumn {
+  composes: flex;
+  flex-direction: column;
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
+}
+
+.gap3 {
+  gap: 3rem;
+}
+
+/* ============================================
+   SPACING
+   ============================================ */
+.m0 { margin: 0; }
+.m1 { margin: 1rem; }
+.m2 { margin: 2rem; }
+.m3 { margin: 3rem; }
+.m4 { margin: 4rem; }
+
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: 1rem; }
+.mt2 { margin-top: 2rem; }
+.mt3 { margin-top: 3rem; }
+.mt4 { margin-top: 4rem; }
+
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: 1rem; }
+.mb2 { margin-bottom: 2rem; }
+.mb3 { margin-bottom: 3rem; }
+.mb4 { margin-bottom: 4rem; }
+
+.p0 { padding: 0; }
+.p1 { padding: 1rem; }
+.p2 { padding: 2rem; }
+.p3 { padding: 3rem; }
+.p4 { padding: 4rem; }
+
+.pt0 { padding-top: 0; }
+.pt1 { padding-top: 1rem; }
+.pt2 { padding-top: 2rem; }
+.pt3 { padding-top: 3rem; }
+.pt4 { padding-top: 4rem; }
+
+.pb0 { padding-bottom: 0; }
+.pb1 { padding-bottom: 1rem; }
+.pb2 { padding-bottom: 2rem; }
+.pb3 { padding-bottom: 3rem; }
+.pb4 { padding-bottom: 4rem; }
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+.mobileOnly {
+  display: none;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+.tabletUp {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tabletUp {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobileOnly {
+    display: block;
+  }
+  
+  .desktopOnly {
+    display: none;
+  }
+  
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionMobile {
+    padding: 3rem 1rem;
+  }
+}
+
+/* ============================================
+   VISIBILITY
+   ============================================ */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================
+   POSITION
+   ============================================ */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.zIndex1 {
+  z-index: 1;
+}
+
+.zIndex2 {
+  z-index: 2;
+}
+
+.zIndex10 {
+  z-index: 10;
+}
+
+.zIndex100 {
+  z-index: 100;
+}

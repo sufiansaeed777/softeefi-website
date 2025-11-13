@@ -1,0 +1,88 @@
+# Replace your current redirects section with this (use full URLs):
+
+    # === REDIRECTS FOR OLD URLs (Fixes Google 404s) ===
+    location = /free-reports {
+        return 301 https://softeefi.co.uk/free-learning;
+    }
+    
+    location = /services {
+        return 301 https://softeefi.co.uk/;
+    }
+    
+    location = /ai-solutions {
+        return 301 https://softeefi.co.uk/ai-integration;
+    }
+    
+    location = /web-development {
+        return 301 https://softeefi.co.uk/websites-and-apps;
+    }
+    
+    location = /digital-marketing-services {
+        return 301 https://softeefi.co.uk/digital-marketing;
+    }
+    
+    location = /portfolio {
+        return 301 https://softeefi.co.uk/projects;
+    }
+    
+    location = /testimonials {
+        return 301 https://softeefi.co.uk/;
+    }
+    
+    location = /resources {
+        return 301 https://softeefi.co.uk/blog;
+    }
+    
+    location = /careers {
+        return 301 https://softeefi.co.uk/contact;
+    }
+    
+    location = /partners {
+        return 301 https://softeefi.co.uk/contact;
+    }
+    
+    location = /case-studies {
+        return 301 https://softeefi.co.uk/projects;
+    }
+    
+    location = /get-started {
+        return 301 https://softeefi.co.uk/contact;
+    }
+    
+    location = /solutions {
+        return 301 https://softeefi.co.uk/;
+    }
+    
+    # Keep your existing redirects with full URLs too:
+    location = /services/digital-art {
+        return 301 https://softeefi.co.uk/services/digital-art-nfts;
+    }
+    
+    location = /services/cloud-services {
+        return 301 https://softeefi.co.uk/services/cloud-infrastructure;
+    }
+    
+    location = /services/video-production {
+        return 301 https://softeefi.co.uk/services/graphic-design;
+    }
+    
+    location = /projects/digital-marketing-projects {
+        return 301 https://softeefi.co.uk/projects/digital-marketing;
+    }
+    
+    location = /projects/cloud-projects {
+        return 301 https://softeefi.co.uk/projects/cloud-infrastructure;
+    }
+    
+    location = /free-reports/websites-and-apps {
+        return 301 https://softeefi.co.uk/free-learning;
+    }
+    
+    location = /blog/6 {
+        return 301 https://softeefi.co.uk/blog;
+    }
+    
+    location = /blog/4 {
+        return 301 https://softeefi.co.uk/blog;
+    }
+    # === END REDIRECTS ===

@@ -1,0 +1,1083 @@
+/* ---------------------------------------------------
+   Global & Base
+--------------------------------------------------- */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables for Theme Colors */
+:root {
+  --primary: #1aac83;       /* Primary color */
+  --secondary: #e7195a;     /* Error or secondary color */
+  --background: #f1f1f1;    /* Light background */
+  --text-dark: #333;        /* Dark text color */
+  --text-light: #fff;       /* Light text color */
+}
+
+/* Global Styles */
+html {
+  scroll-padding-top: 80px; /* Offset for fixed navbar when using anchor links */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117; /* Dark background to match new theme */
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff; /* White text for dark theme */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force remove scrollbar arrows on body and html */
+body::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button {
+  display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--primary);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+button {
+  background: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--text-light);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: var(--secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+header {
+  background: var(--text-light);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+header a {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------
+   Footer
+--------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: var(--text-light);
+  color: var(--text-dark);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+footer a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+
+/* ---------------------------------------------------
+   Navbar
+--------------------------------------------------- */
+/* Adding gap for consistent spacing */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* consistent spacing between nav items */
+}
+
+
+
+/* ---------------------------------------------------
+   Auth Forms
+--------------------------------------------------- */
+/* Auth Forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto; 
+  /* Center horizontally with auto left/right margin */
+  
+  padding: 20px 40px 20px 20px;
+  /* 20px top, 50px right, 20px bottom, 10px left */
+  
+  background: #fff;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  /* spacing between label, input, button */
+}
+
+
+form.signup label,
+form.login label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;      /* Make label text stand out */
+}
+
+form.signup input,
+form.login input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  
+}
+
+
+form.signup button,
+form.login button {
+  align-self: flex-start; /* button doesnot stretch full width */
+  padding: 10px 20px;     /* consistent padding */
+  font-weight: 600;
+  margin-top: 5px;        /* small spacing above button */
+}
+
+
+/* ---------------------------------------------------
+   Pages Wrapper
+--------------------------------------------------- */
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Page wrapper to account for fixed navbar */
+.page-wrapper {
+  padding-top: 90px; /* Height of navbar + some spacing */
+  min-height: 100vh;
+  background: #0d1117; /* Dark background to match new theme */
+}
+
+/* Ensure mobile menu button is hidden on desktop */
+.mobile-menu-btn {
+  display: none !important;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px; /* Adjust for mobile navbar */
+  }
+  
+  .page-wrapper {
+    padding-top: 80px; /* Increased for mobile to ensure content is visible */
+  }
+  
+  /* Hide desktop nav on mobile */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  
+  /* Mobile-first responsive typography */
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Touch-friendly tap targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Container padding adjustments */
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-wrapper {
+    padding-top: 75px; /* Fine-tune for smaller mobile devices */
+  }
+}
+
+/* ---------------------------------------------------
+   Landing 
+--------------------------------------------------- */
+.landing {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff; /* Updated for dark theme */
+}
+
+/* Ensure first section in landing page has proper spacing */
+.landing > section:first-child {
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .landing > section:first-child {
+    padding-top: 1rem;
+  }
+}
+
+.hero-section {
+  background-color: #1aac83;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.how-it-works {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+.how-it-works ol {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+.how-it-works li {
+  margin-bottom: 0.5rem;
+}
+.features {
+  background: #f9f9f9;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.feature-card {
+  flex: 1 1 200px;
+  max-width: 250px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.testimonials {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.testimonial {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.author {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+.call-to-action {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.landing-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+}
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------
+   About Page
+--------------------------------------------------- */
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+.about-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-hero h1 {
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+.about-content h2 {
+  margin-top: 2rem;
+  color: var(--primary);
+}
+.about-content ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+.about-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+/* ---------------------------------------------------
+   Contact Page
+--------------------------------------------------- */
+.contact-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+.contact-page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  margin: 0.5rem 0 0.2rem 0;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.contact-form textarea {
+  min-height: 120px;
+}
+.contact-form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-form button:hover {
+  background: #148f6b;
+}
+.contact-info {
+  flex: 1 1 300px;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+.contact-info h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+.error-msg {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.success-msg {
+  color: #28a745;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------
+   Pricing Page
+--------------------------------------------------- */
+.pricing-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  color: #333;
+}
+.pricing-page h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.pricing-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.pricing-card h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+.price {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #333;
+}
+ul {
+  text-align: left;
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+  color: #555;
+}
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+.cta-button:hover {
+  background-color: #148f6b;
+}
+.pricing-faq {
+  text-align: left;
+  margin-top: 3rem;
+}
+.pricing-faq h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.pricing-faq p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------
+   General text-heavy pages (FAQ, Terms, Support)
+--------------------------------------------------- */
+.general-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  color: #333;
+}
+.general-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+.general-page h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.8rem;
+  color: var(--primary);
+}
+.general-page p {
+  margin-bottom: 1rem;
+}
+.general-page ul,
+.general-page ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.general-page .section {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.general-page strong {
+  color: #555;
+}
+
+/* ---------------------------------------------------
+   Step-by-step answer blocks
+--------------------------------------------------- */
+.step-by-step-answer {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+.step-by-step-answer p {
+  margin: 0 0 10px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------------------------------------------------
+   Dashboard & Modal
+--------------------------------------------------- */
+.dashboard {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.delete-all-btn {
+  float: right;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.delete-all-btn:hover {
+  background-color: #c0392b;
+}
+
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.question-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-content {
+  cursor: pointer;
+  flex: 1; /* let the content use up space */
+}
+
+.delete-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.delete-btn:hover {
+  background-color: var(--secondary);
+}
+
+/* ============ Modal ============ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-translucent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* on top of everything */
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;        /* Big width */
+  max-width: 900px;  /* max limit */
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 6px;
+  position: relative;
+  padding: 30px;     /* more padding for big content */
+}
+
+/* Close button at top right of modal */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+}
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-body h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.answer-steps {
+  margin-top: 15px;
+}
+.answer-step {
+  margin-bottom: 1em;
+  white-space: pre-wrap; 
+}
+
+/* ---------------------------------------------------
+   AskQuestion
+--------------------------------------------------- */
+.ask-question-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.question-form {
+  margin-bottom: 20px;
+}
+.question-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.question-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.question-form button {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.question-form button:hover {
+  background-color: #148f6b;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.answer-section {
+  position: relative; /* so we can place the label top-right */
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  background: #f9f9f9;
+  margin-top: 20px;
+}
+/* Default Header Style */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Adjust gap if needed */
+  padding: 0 20px;
+}
+
+/* Responsive Header Style */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px; /* Adjust spacing for smaller screens */
+  }
+}
+
+/* Top-right container for plan & leftover usage */
+.top-right-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex; /* Use flexbox for alignment */
+  gap: 1rem; /* Add space between Plan and Questions Left */
+  font-weight: bold;
+  background: #fff; 
+  padding: 5px 10px; 
+  border-radius: 4px; 
+  font-size: 1rem; /* Default font size */
+}
+
+.top-right-label span {
+  margin-right: 1rem; /* Add space after each span */
+}
+
+.top-right-label span:last-child {
+  margin-right: 0; /* Remove margin from the last span */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .top-right-label {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+    top: 5px; /* Adjust spacing from the top */
+    right: 5px; /* Adjust spacing from the right */
+    padding: 4px 8px; /* Adjust padding for a compact look */
+    display: flex; /* Use flexbox for better alignment */
+    gap: 0.5rem; /* Reduce gap for smaller screens */
+  }
+
+  .top-right-label span {
+    margin-right: 0.5rem; /* Reduce margin for smaller screens */
+  }
+}
+
+
+.step-by-step-answer {
+  margin-top: 20px;
+}
+
+.answer-step {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.answer-step p {
+  margin: 0;
+}
+
+/* --------------------------------------
+   RESPONSIVE MEDIA QUERIES
+--------------------------------------- */
+
+/* 
+   At smaller screens (e.g., max-width: 768px), 
+   we adjust layouts for a better mobile experience.
+*/
+@media (max-width: 768px) {
+
+
+  
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .feature-grid, 
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card, 
+  .pricing-card {
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .ask-question-page,
+  .dashboard,
+  .general-page,
+  .about-page,
+  .contact-page,
+  .pricing-page {
+    padding: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .question-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-all-btn {
+    float: none;
+    margin: 0 0 10px 0;
+    align-self: flex-end;
+  }
+
+  /* Modal content shrinks a bit on smaller screens */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+.active-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------
+   Support Page Styles
+--------------------------------------------------- */
+.support-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.support-page h1 {
+  font-size: 2rem;
+  color: var(--primary); /* Use primary theme color */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.support-page p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.support-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.support-page form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.support-page form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.support-page form button {
+  background: var(--primary); /* Use primary theme color */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.support-page form button:hover {
+  background: #148f6b; /* Slightly darker primary color */
+}
+
+.support-feedback {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #28a745; /* Green color for success message */
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .support-page {
+    padding: 15px;
+  }
+
+  .support-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .support-page form button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Fix autofill text color for dark backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #0d1117 !important;
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Global custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ff7f, #00af60);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ff9f, #00cf70);
+  background-clip: padding-box;
+}
+
+/* Remove all scrollbar arrows/buttons */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: none !important;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: none !important;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none !important;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff7f rgba(255, 255, 255, 0.05);
+}
+
+/* Custom scrollbar for AI modal */
+.ai-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ai-modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.ai-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 127, 0.3);
+  border-radius: 4px;
+}
+
+.ai-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 127, 0.5);
+}
+
+.ai-modal-content::-webkit-scrollbar-button {
+  display: none;
+}

@@ -1,0 +1,184 @@
+/* Digital Marketing Mobile Optimizations */
+
+/* Testimonial scroll animation */
+@keyframes testimonialScrollDM {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes digitalMarketingTestimonialScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Ensure proper mobile viewport */
+@media (max-width: 768px) {
+  /* Portfolio Grid Mobile */
+  .portfolio-grid {
+    padding: 0 0.5rem;
+  }
+
+  /* Service Cards Mobile */
+  .service-card {
+    margin-bottom: 1.5rem !important;
+    min-height: auto !important;
+  }
+
+  /* Portfolio Modal Mobile */
+  .portfolio-modal-content {
+    padding: 1rem !important;
+    max-height: 90vh !important;
+  }
+
+  /* Hero Section Mobile */
+  .digital-marketing-hero {
+    padding-top: 80px !important;
+    min-height: auto !important;
+  }
+
+  /* Text Readability */
+  .digital-marketing-page h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .digital-marketing-page h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
+  }
+
+  .digital-marketing-page p {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+    line-height: 1.6;
+  }
+
+  /* Buttons Mobile */
+  .digital-marketing-page button,
+  .digital-marketing-page a.button {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Cards and Containers */
+  .digital-marketing-page .card,
+  .digital-marketing-page .service-card,
+  .digital-marketing-page .portfolio-item {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* Fix overflow issues */
+  .digital-marketing-page {
+    overflow-x: hidden;
+  }
+
+  /* Touch-friendly spacing */
+  .clickable,
+  .portfolio-item,
+  .service-card {
+    min-height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  /* Image optimizations */
+  .portfolio-modal img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Testimonial cards mobile */
+  .testimonial-card {
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Process steps mobile */
+  .process-step {
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Team cards mobile */
+  .team-member-card {
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Fix horizontal scroll */
+  * {
+    max-width: 100vw;
+  }
+
+  /* Improve tap targets */
+  a, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Portfolio tabs mobile */
+  .portfolio-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .portfolio-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-tabs button {
+    flex-shrink: 0;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .digital-marketing-page .container {
+    padding: 0 2rem;
+  }
+
+  .service-card {
+    min-height: 500px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .digital-marketing-page {
+    --primary-color: #00ff00;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+  }
+  
+  .service-card,
+  .portfolio-item {
+    border: 2px solid var(--primary-color);
+  }
+}

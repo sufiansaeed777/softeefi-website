@@ -1,0 +1,59 @@
+body {
+    cursor: none; /* Hide default cursor */
+  }
+  
+  .cursor {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--green-accent);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+  }
+  
+  .cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--green-accent);
+    border-radius: 100%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.2s ease-out;
+    mix-blend-mode: difference;
+  }
+  
+  .cursor.clicked {
+    width: 15px;
+    height: 15px;
+    background-color: var(--green-accent-darker);
+  }
+  
+  .cursor-follower.clicked {
+    width: 20px;
+    height: 20px;
+    border-color: var(--green-accent-darker);
+  }
+  
+  .cursor.link-hovered {
+    width: 15px;
+    height: 15px;
+    background-color: var(--green-accent);
+  }
+  
+  .cursor-follower.link-hovered {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+    opacity: 0.5;
+  }
+  
+  .cursor.hidden,
+  .cursor-follower.hidden {
+    opacity: 0;
+  }

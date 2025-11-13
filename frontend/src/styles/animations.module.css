@@ -1,0 +1,377 @@
+/* Animations CSS Module - All animation classes */
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes testimonialScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================
+   ANIMATION CLASSES
+   ============================================ */
+.fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fadeInDown {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.fadeInRight {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.slideIn {
+  animation: slideIn 0.5s ease-out;
+}
+
+.slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+.scaleIn {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.scroll {
+  animation: scroll 45s linear infinite;
+}
+
+.testimonialScroll {
+  animation: testimonialScroll 45s linear infinite;
+}
+
+/* ============================================
+   ANIMATION DELAYS
+   ============================================ */
+.delay100 {
+  animation-delay: 0.1s;
+}
+
+.delay200 {
+  animation-delay: 0.2s;
+}
+
+.delay300 {
+  animation-delay: 0.3s;
+}
+
+.delay400 {
+  animation-delay: 0.4s;
+}
+
+.delay500 {
+  animation-delay: 0.5s;
+}
+
+.delay600 {
+  animation-delay: 0.6s;
+}
+
+.delay700 {
+  animation-delay: 0.7s;
+}
+
+.delay800 {
+  animation-delay: 0.8s;
+}
+
+/* ============================================
+   ANIMATION SPEEDS
+   ============================================ */
+.fast {
+  animation-duration: 0.3s;
+}
+
+.normal {
+  animation-duration: 0.6s;
+}
+
+.slow {
+  animation-duration: 1s;
+}
+
+.verySlow {
+  animation-duration: 2s;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+.hoverScale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.hoverLift:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.hoverGlow:hover {
+  box-shadow: 0 20px 40px rgba(0, 255, 127, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.hoverBright:hover {
+  filter: brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+.hoverRotate:hover {
+  transform: rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   TRANSITION UTILITIES
+   ============================================ */
+.transition {
+  transition: all 0.3s ease;
+}
+
+.transitionFast {
+  transition: all 0.15s ease;
+}
+
+.transitionSlow {
+  transition: all 0.6s ease;
+}
+
+.transitionColors {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.transitionTransform {
+  transition: transform 0.3s ease;
+}
+
+.transitionOpacity {
+  transition: opacity 0.3s ease;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+.gpuAccelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.noAnimation {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .fadeIn,
+  .fadeInUp,
+  .fadeInDown,
+  .fadeInLeft,
+  .fadeInRight,
+  .slideIn,
+  .slideUp,
+  .scaleIn,
+  .rotate,
+  .pulse,
+  .bounce,
+  .float,
+  .scroll {
+    animation: none;
+  }
+}

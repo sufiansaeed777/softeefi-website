@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing & SEO 101 - Visual Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 30px 0;
+            font-size: 2.5rem;
+        }
+        
+        .infographic {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        /* Digital Marketing Ecosystem */
+        .ecosystem {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .ecosystem-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .ecosystem-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .ecosystem-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .ecosystem-item .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-description {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        
+        /* Customer Journey */
+        .journey {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .journey-step {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .journey-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #3498db;
+        }
+        
+        .journey-step:last-child::after {
+            display: none;
+        }
+        
+        .journey-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .roi-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .roi-input {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .roi-input label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .roi-input input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .calculate-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: background 0.3s;
+        }
+        
+        .calculate-btn:hover {
+            background: #2980b9;
+        }
+        
+        .roi-result {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #27ae60;
+        }
+        
+        /* SEO Checklist */
+        .checklist {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .checklist-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .checkbox {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        /* Platform Comparison */
+        .platform-comparison {
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .platform-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        /* Content Calendar */
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .calendar-header {
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        .calendar-day {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 2px solid #ecf0f1;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .calendar-day:hover {
+            border-color: #3498db;
+            transform: scale(1.05);
+        }
+        
+        .calendar-day .content-type {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        /* Animation Classes */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .journey-step::after {
+                display: none;
+            }
+            
+            .calendar {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .ecosystem {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Marketing & SEO Visual Guide</h1>
+        
+        <!-- Digital Marketing Ecosystem -->
+        <div class="infographic animate-in">
+            <h2>The Digital Marketing Ecosystem</h2>
+            <div class="ecosystem">
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="icon">🔍</div>
+                    <h3>SEO</h3>
+                    <p>Organic traffic from search engines</p>
+                </div>
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p>Building communities & engagement</p>
+                </div>
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="icon">📧</div>
+                    <h3>Email Marketing</h3>
+                    <p>Direct communication & nurturing</p>
+                </div>
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <div class="icon">📝</div>
+                    <h3>Content Marketing</h3>
+                    <p>Valuable content that converts</p>
+                </div>
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <div class="icon">💰</div>
+                    <h3>Paid Ads</h3>
+                    <p>Targeted advertising campaigns</p>
+                </div>
+                <div class="ecosystem-item" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                    <div class="icon">📊</div>
+                    <h3>Analytics</h3>
+                    <p>Data-driven decisions</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Statistics -->
+        <div class="infographic animate-in">
+            <h2>Digital Marketing Statistics That Matter</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">97%</span>
+                    <span class="stat-description">of people check online before visiting a business</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">53%</span>
+                    <span class="stat-description">of website traffic comes from organic search</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">£42</span>
+                    <span class="stat-description">return for every £1 spent on email marketing</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">65%</span>
+                    <span class="stat-description">of businesses say referrals are best lead source</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">59%</span>
+                    <span class="stat-description">of global traffic comes from mobile devices</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">70%</span>
+                    <span class="stat-description">of marketers use AI-driven strategies</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Customer Journey -->
+        <div class="infographic animate-in">
+            <h2>The Customer Journey</h2>
+            <div class="journey">
+                <div class="journey-step">
+                    <div class="journey-circle">1</div>
+                    <h3>Awareness</h3>
+                    <p>Customer realizes they have a need</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-circle">2</div>
+                    <h3>Research</h3>
+                    <p>Searching for solutions online</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-circle">3</div>
+                    <h3>Consideration</h3>
+                    <p>Comparing different options</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-circle">4</div>
+                    <h3>Purchase</h3>
+                    <p>Making the buying decision</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-circle">5</div>
+                    <h3>Loyalty</h3>
+                    <p>Becoming a repeat customer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ROI Calculator -->
+        <div class="infographic animate-in">
+            <h2>Simple ROI Calculator</h2>
+            <div class="roi-calculator">
+                <div class="roi-inputs">
+                    <div class="roi-input">
+                        <label for="investment">Monthly Marketing Investment (£)</label>
+                        <input type="number" id="investment" value="500">
+                    </div>
+                    <div class="roi-input">
+                        <label for="customers">New Customers Generated</label>
+                        <input type="number" id="customers" value="10">
+                    </div>
+                    <div class="roi-input">
+                        <label for="value">Average Customer Value (£)</label>
+                        <input type="number" id="value" value="150">
+                    </div>
+                </div>
+                <button class="calculate-btn" onclick="calculateROI()">Calculate ROI</button>
+                <div class="roi-result" id="roiResult"></div>
+            </div>
+        </div>
+        
+        <!-- SEO Checklist -->
+        <div class="infographic animate-in">
+            <h2>Essential SEO Checklist</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Claim and optimize Google My Business listing</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Ensure website is mobile-friendly</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Install Google Analytics and Search Console</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Optimize page titles and meta descriptions</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Create and submit XML sitemap</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Build local citations and get reviews</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Create helpful, keyword-focused content</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Improve page loading speed</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Platform Comparison -->
+        <div class="infographic animate-in">
+            <h2>Social Media Platform Comparison</h2>
+            <div class="platform-comparison">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Best For</th>
+                            <th>Age Group</th>
+                            <th>Content Type</th>
+                            <th>Posting Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Facebook</td>
+                            <td>Local businesses</td>
+                            <td>35+</td>
+                            <td>Mixed content</td>
+                            <td>3-4 times/week</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram</td>
+                            <td>Visual brands</td>
+                            <td>18-45</td>
+                            <td>Photos, Stories, Reels</td>
+                            <td>4-7 times/week</td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn</td>
+                            <td>B2B services</td>
+                            <td>25-55</td>
+                            <td>Professional content</td>
+                            <td>2-3 times/week</td>
+                        </tr>
+                        <tr>
+                            <td>TikTok</td>
+                            <td>Entertainment</td>
+                            <td>16-30</td>
+                            <td>Short videos</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Twitter</td>
+                            <td>News, Updates</td>
+                            <td>25-50</td>
+                            <td>Short updates</td>
+                            <td>3-5 times/day</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Content Calendar -->
+        <div class="infographic animate-in">
+            <h2>Sample Content Calendar</h2>
+            <div class="calendar">
+                <div class="calendar-header">Mon</div>
+                <div class="calendar-header">Tue</div>
+                <div class="calendar-header">Wed</div>
+                <div class="calendar-header">Thu</div>
+                <div class="calendar-header">Fri</div>
+                <div class="calendar-header">Sat</div>
+                <div class="calendar-header">Sun</div>
+                
+                <div class="calendar-day">
+                    <strong>Motivation</strong>
+                    <span class="content-type">Quote/Tip</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Education</strong>
+                    <span class="content-type">How-to Post</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Behind Scenes</strong>
+                    <span class="content-type">Team/Process</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Throwback</strong>
+                    <span class="content-type">Success Story</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Feature</strong>
+                    <span class="content-type">Product/Service</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Community</strong>
+                    <span class="content-type">Local Focus</span>
+                </div>
+                <div class="calendar-day">
+                    <strong>Fun</strong>
+                    <span class="content-type">Light Content</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Semantic SEO Visual -->
+        <div class="infographic animate-in">
+            <h2>Traditional SEO vs Semantic SEO</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div style="background: #ffcccc; padding: 30px; border-radius: 10px;">
+                    <h3 style="color: #e74c3c; margin-bottom: 20px;">❌ Old Way (Keyword Stuffing)</h3>
+                    <p style="font-family: monospace; line-height: 1.8;">
+                        "Best pizza London. Pizza delivery London. 
+                        London pizza restaurant. Cheap pizza London. 
+                        Pizza London best. London pizza order online."
+                    </p>
+                    <p style="margin-top: 20px; color: #7f8c8d;">
+                        <strong>Result:</strong> Penalized by Google, poor user experience
+                    </p>
+                </div>
+                <div style="background: #ccffcc; padding: 30px; border-radius: 10px;">
+                    <h3 style="color: #27ae60; margin-bottom: 20px;">✓ New Way (Semantic SEO)</h3>
+                    <p style="line-height: 1.8;">
+                        "Craving authentic Italian pizza in London? 
+                        Our wood-fired pizzas use traditional recipes 
+                        passed down through generations. We deliver 
+                        hot, fresh pizzas across Central London 
+                        until midnight."
+                    </p>
+                    <p style="margin-top: 20px; color: #7f8c8d;">
+                        <strong>Result:</strong> Ranks for 200+ related terms, happy customers
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ROI Calculator
+        function calculateROI() {
+            const investment = parseFloat(document.getElementById('investment').value) || 0;
+            const customers = parseFloat(document.getElementById('customers').value) || 0;
+            const value = parseFloat(document.getElementById('value').value) || 0;
+            
+            const revenue = customers * value;
+            const profit = revenue - investment;
+            const roi = investment > 0 ? ((profit / investment) * 100).toFixed(1) : 0;
+            
+            const resultDiv = document.getElementById('roiResult');
+            
+            if (roi > 0) {
+                resultDiv.innerHTML = `
+                    <strong>Your ROI: ${roi}%</strong><br>
+                    Revenue: £${revenue.toFixed(2)}<br>
+                    Profit: £${profit.toFixed(2)}
+                `;
+                resultDiv.style.color = '#27ae60';
+            } else {
+                resultDiv.innerHTML = `
+                    <strong>Your ROI: ${roi}%</strong><br>
+                    Revenue: £${revenue.toFixed(2)}<br>
+                    Loss: £${Math.abs(profit).toFixed(2)}
+                `;
+                resultDiv.style.color = '#e74c3c';
+            }
+        }
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.infographic').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+        
+        // Checkbox persistence
+        document.querySelectorAll('.checkbox').forEach((checkbox, index) => {
+            checkbox.id = `check-${index}`;
+            
+            // Load saved state
+            if (localStorage.getItem(checkbox.id) === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Save state on change
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+        });
+        
+        // Calculate initial ROI
+        calculateROI();
+    </script>
+</body>
+</html>

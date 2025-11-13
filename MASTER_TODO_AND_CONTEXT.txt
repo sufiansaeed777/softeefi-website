@@ -1,0 +1,142 @@
+MASTER TODO AND CONTEXT FILE
+============================
+Created: January 7, 2025
+Purpose: Resume work without losing context
+
+CURRENT SITUATION
+-----------------
+- You're a Masters CS student in Gravesend
+- Building Softeefi (considering name change from Tech Pros)
+- Have team in Pakistan for development support
+- Starting as student but positioning as professional agency
+- Website looks professional, need to restructure services
+
+DECISIONS MADE (NOT YET IMPLEMENTED)
+------------------------------------
+
+1. SERVICES RESTRUCTURE:
+   OLD (9+ services) → NEW (4 core services)
+   
+   REMOVE FROM MAIN NAV:
+   - App Development (merge with Web)
+   - Video Production → Move to footer "Fun Stuff"
+   - Digital Art & NFTs → Move to footer
+   - Graphic Design → Merge into UI/UX
+
+   NEW STRUCTURE:
+   • Websites & Apps (merged Web + App + UI/UX included)
+   • AI Solutions
+   • Cloud Hosting
+   • Digital Marketing
+
+2. PRICING STRATEGY:
+   - Start with £800-1,500 projects locally
+   - Position as "boutique agency" not student
+   - Target Gravesend SMBs first
+   - Don't say "we're not greedy" - say "flexible packages"
+
+3. TARGET MARKET:
+   - 45+ Gravesend businesses identified (see GRAVESEND_SMB_TARGETS.txt)
+   - Join Gravesham Business Network (900+ members)
+   - Focus on restaurants, professional services, local shops
+
+CODE CHANGES NEEDED
+-------------------
+
+1. NAVIGATION:
+   □ Update App.js - comment out/remove routes for:
+     - /services/app-development
+     - /services/video-production
+     - /services/digital-art-nfts
+     - /services/graphic-design (separate page)
+   
+   □ Update App.js - rename route:
+     - /services/website-development → /services/websites-and-apps
+
+2. NAVBAR:
+   □ Update Navbar.js services array:
+     - Remove: App Development, Video Production, Digital Art, Graphic Design
+     - Rename: "Website Development" → "Websites & Apps"
+     - Rename: "AI Solutions & Integration" → "AI Solutions"
+     - Rename: "Cloud Infrastructure" → "Cloud Hosting"
+     - Rename: "Digital Marketing & SEO" → "Digital Marketing"
+
+3. SERVICE PAGES:
+   □ Create new WebsitesAndApps.js (merge Web + App content)
+   □ Update UI/UX page to remove or redirect
+   □ Update service descriptions to match new positioning
+
+4. LANDING PAGE:
+   □ Update services grid to show only 4 core services
+   □ Update any service listings
+
+5. FOOTER:
+   □ Add new section "Additional Creative Services"
+   □ List: Video, Digital Art, Graphic Design
+   □ Add text: "Select creative projects available"
+
+6. CONTACT FORM:
+   □ Update service dropdown options to match new structure
+
+7. FREE REPORTS:
+   □ Update to match new 4 services
+   □ Remove reports for removed services
+
+FIXES ALREADY COMPLETED
+-----------------------
+1. ✓ Contact hero section padding/spacing
+2. ✓ "Something Amazing" spacing fixed
+3. ✓ Navbar highlighting issue fixed
+4. ✓ Explore Services button now scrolls to services section
+5. ✓ UI/UX Design buttons have onClick handlers
+6. ✓ Mobile optimizations for contact section
+
+FILES CREATED FOR REFERENCE
+---------------------------
+1. BUSINESS_MODEL_ANALYSIS.txt - Full business analysis
+2. SERVICE_RESTRUCTURING_PLAN.txt - Service focusing strategy
+3. COMPLETE_BUSINESS_STRATEGY.txt - All recommendations
+4. STARTUP_PRICING_STRATEGY.txt - Pricing approach
+5. GRAVESEND_SMB_TARGETS.txt - Local businesses to target
+6. FINAL_SERVICE_STRUCTURE.txt - New service structure with clear names
+7. MASTER_TODO_AND_CONTEXT.txt - This file
+
+HOW TO RESUME TOMORROW
+----------------------
+1. Open this file first
+2. Tell Claude: "I'm resuming work on my website restructure. Please read MASTER_TODO_AND_CONTEXT.txt"
+3. Start with the CODE CHANGES NEEDED section
+4. Work through checkboxes systematically
+
+QUICK REFERENCE - NEW STRUCTURE
+-------------------------------
+Before: 9+ services (too many)
+After: 4 core services
+
+1. Websites & Apps (includes UI/UX)
+2. AI Solutions  
+3. Cloud Hosting
+4. Digital Marketing
+
+Footer: Video, Digital Art, Graphic Design (if requested)
+
+REMEMBER
+--------
+- You're positioning as Softeefi (boutique agency)
+- Not mentioning student status
+- Starting price: £800
+- Target: Gravesend SMBs
+- Pakistan team = "our technical team"
+- Focus on value, not price
+
+TOMORROW'S PRIORITY
+-------------------
+1. Update navigation/routes (App.js)
+2. Update navbar services (Navbar.js)
+3. Create merged Websites & Apps page
+4. Update landing page services
+5. Add footer creative services
+6. Test everything
+7. Go live with new structure!
+
+END OF MASTER FILE
