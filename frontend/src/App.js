@@ -11,6 +11,7 @@ import FloatingContactWidget from './components/FloatingContactWidget';
 import { LazyDataFlowAnimationSVGWrapper } from './components/LazyComponents';
 import TawkTo from './components/TawkTo';
 import Analytics, { trackSession } from './components/Analytics';
+import 'aos/dist/aos.css';
 
 // --- Eagerly loaded components (needed immediately) ---
 import { ProgressBar } from './components/LoadingStates';
@@ -49,8 +50,6 @@ const Blog = lazy(() => import('./pages/Blog'));
 // Admin Dashboard
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'));
-// AOS will be loaded dynamically when needed
-import 'aos/dist/aos.css';
 
 // Optional: Remove console logs for production
 // console.log('App component is rendering');
