@@ -828,32 +828,8 @@ const Landing = () => {
         "/images/portfolio/trading-mohamad-main.webp",
         "/images/portfolio/iboothme-main.webp"
       ]
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Secure scalable cloud infrastructure that grows with you",
-      Icon: CloudIcon,
-      link: "/services/cloud-infrastructure",
-      gradient: serviceThemes.cloud.gradient,
-      step: "3. Deploy",
-      askAI: true,
-      portfolioImages: []
-    },
-    {
-      title: "Digital Marketing & SEO",
-      description: "Data-driven strategies to grow your online presence",
-      Icon: MarketingIcon,
-      link: "/services/digital-marketing-seo",
-      gradient: serviceThemes.marketing.gradient,
-      step: "4. Grow",
-      askAI: true,
-      portfolioImages: [
-        "/images/portfolio/dr-diana.webp",
-        "/images/portfolio/backward-point.webp",
-        "/images/portfolio/mitchell-saum-021104.webp",
-        "/images/portfolio/dr-diana-strategy-1.webp"
-      ]
     }
+    // Cloud Solutions and Digital Marketing & SEO moved to footer
   ];
 
   // AI Questions for each service
@@ -869,19 +845,8 @@ const Landing = () => {
       "What's the difference between ChatGPT and custom AI?",
       "Can AI be integrated into my existing system?",
       "What are the ROI benefits of AI implementation?"
-    ],
-    "Cloud Infrastructure": [
-      "Which cloud provider is best for my needs?",
-      "How can I reduce my cloud hosting costs?",
-      "What's the difference between serverless and traditional hosting?",
-      "How secure is cloud infrastructure?"
-    ],
-    "Digital Marketing & SEO": [
-      "How long does SEO take to show results?",
-      "What's the best digital marketing strategy for SMBs?",
-      "How much should I budget for digital marketing?",
-      "Can you guarantee first page Google rankings?"
     ]
+    // Cloud Infrastructure and Digital Marketing & SEO moved to footer
   };
 
   // Creative services for footer section - NOT DISPLAYED ON MAIN PAGE

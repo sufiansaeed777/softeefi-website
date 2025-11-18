@@ -228,7 +228,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Column 2: Quick Links */}
-        <motion.div 
+        <motion.div
           style={footerColumnStyle}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -243,8 +243,8 @@ export default function Footer() {
             {/* Temporarily commented out Blog section
             <li style={footerListItemStyle}>
               <motion.div variants={linkHoverAnimation} initial="initial" whileHover="hover">
-                <Link 
-                  to="/blog" 
+                <Link
+                  to="/blog"
                   style={footerLinkBaseStyle}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = '#00ff7f';
@@ -268,8 +268,8 @@ export default function Footer() {
             */}
             <li style={footerListItemStyle}>
               <motion.div variants={linkHoverAnimation} initial="initial" whileHover="hover">
-                <Link 
-                  to="/faq" 
+                <Link
+                  to="/faq"
                   style={footerLinkBaseStyle}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = '#00ff7f';
@@ -287,6 +287,54 @@ export default function Footer() {
                   }}
                 >
                   FAQ
+                </Link>
+              </motion.div>
+            </li>
+            <li style={footerListItemStyle}>
+              <motion.div variants={linkHoverAnimation} initial="initial" whileHover="hover">
+                <Link
+                  to="/services/cloud-infrastructure"
+                  style={footerLinkBaseStyle}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#00ff7f';
+                    if (!isMobile) {
+                      e.currentTarget.style.borderLeft = '2px solid #00ff7f';
+                      e.currentTarget.style.paddingLeft = '0.7rem';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#c0c0c0';
+                    if (!isMobile) {
+                      e.currentTarget.style.borderLeft = '2px solid transparent';
+                      e.currentTarget.style.paddingLeft = '0.5rem';
+                    }
+                  }}
+                >
+                  Cloud Infrastructure
+                </Link>
+              </motion.div>
+            </li>
+            <li style={footerListItemStyle}>
+              <motion.div variants={linkHoverAnimation} initial="initial" whileHover="hover">
+                <Link
+                  to="/services/digital-marketing-seo"
+                  style={footerLinkBaseStyle}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#00ff7f';
+                    if (!isMobile) {
+                      e.currentTarget.style.borderLeft = '2px solid #00ff7f';
+                      e.currentTarget.style.paddingLeft = '0.7rem';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#c0c0c0';
+                    if (!isMobile) {
+                      e.currentTarget.style.borderLeft = '2px solid transparent';
+                      e.currentTarget.style.paddingLeft = '0.5rem';
+                    }
+                  }}
+                >
+                  Digital Marketing & SEO
                 </Link>
               </motion.div>
             </li>
