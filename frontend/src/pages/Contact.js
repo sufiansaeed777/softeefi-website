@@ -45,7 +45,6 @@ const Contact = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0.5]);
 
   useEffect(() => {
-    /* COMMENTED OUT - Kent and Local SEO Sections
     // SEO Optimization for Contact Page - Kent Focused
     document.title = 'Contact Us Kent | Softeefi Web Development';
 
@@ -156,7 +155,6 @@ const Contact = () => {
       document.head.appendChild(scriptTag);
     }
     scriptTag.textContent = JSON.stringify(structuredData);
-    END COMMENTED OUT SECTION */
     
     setIsVisible(true);
     window.scrollTo(0, 0);
@@ -789,7 +787,7 @@ const Contact = () => {
 
       </section>
 
-      {/* Kent Services Section for Local SEO */}
+      {/* COMMENTED OUT - Kent Services Section for Local Frontend Content
       <section style={{
         padding: '4rem 2rem',
         background: 'linear-gradient(180deg, rgba(0,255,127,0.03) 0%, transparent 100%)',
@@ -822,15 +820,13 @@ const Contact = () => {
             }}>
               Softeefi is Kent's premier digital agency, delivering cutting-edge solutions to businesses across Gravesend, Dartford, Maidstone, and beyond.
             </p>
-            
-            {/* Services Grid */}
+
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '2rem',
               marginBottom: '3rem'
             }}>
-              {/* Web Development */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -846,7 +842,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* AI Solutions */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -861,7 +856,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Digital Marketing */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -876,7 +870,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* UI/UX Design */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -891,7 +884,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Cloud Services */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -906,7 +898,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Mobile Apps */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -922,7 +913,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Areas Served */}
             <div style={{
               textAlign: 'center',
               padding: '2rem',
@@ -941,6 +931,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
+      END COMMENTED OUT KENT SECTION */}
 
       <div className="contact-main-container">
         <motion.div 
