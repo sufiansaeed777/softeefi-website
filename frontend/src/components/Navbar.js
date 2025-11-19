@@ -30,8 +30,7 @@ const Navbar = () => {
   const servicesDropdownItems = [
     { to: '/services/websites-and-apps', label: 'Websites & Apps', Icon: WebsiteIcon },
     { to: '/services/ai-solutions', label: 'AI Solutions', Icon: AISparkleIcon },
-    { to: '/services/cloud-infrastructure', label: 'Cloud Infrastructure', Icon: CloudIcon },
-    { to: '/services/digital-marketing-seo', label: 'Digital Marketing', Icon: MarketingIcon },
+    // Cloud Infrastructure and Digital Marketing moved to footer
   ];
 
   const reportsDropdownItems = [
