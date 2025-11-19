@@ -1141,131 +1141,6 @@ const Landing = () => {
         )}
       </section>
 
-      {/* SaaS Development Section */}
-      <section style={{
-        padding: isMobile ? '3rem 1rem' : '4rem 2rem',
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1117 100%)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            textAlign: 'center',
-            position: 'relative',
-            zIndex: 1
-          }}
-        >
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(0, 255, 127, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%)',
-            border: '2px solid rgba(0, 255, 127, 0.3)',
-            borderRadius: '20px',
-            padding: isMobile ? '2rem 1.5rem' : '3rem',
-            backdropFilter: 'blur(10px)',
-            boxShadow: '0 20px 60px rgba(0, 255, 127, 0.2)'
-          }}>
-            <h2 style={{
-              fontSize: isMobile ? '2rem' : '3rem',
-              fontWeight: '700',
-              marginBottom: '1rem',
-              background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              We Build SaaS Platforms Too!
-            </h2>
-            <p style={{
-              fontSize: isMobile ? '1.1rem' : '1.3rem',
-              color: '#c9d1d9',
-              marginBottom: '2rem',
-              lineHeight: '1.8'
-            }}>
-              From MVP to scale, we specialize in building robust <Link to="/services/saas-development" style={{color: '#00ff7f', textDecoration: 'none'}}>SaaS applications</Link> with subscription management,
-              multi-tenancy, <Link to="/services/ai-solutions" style={{color: '#00ff7f', textDecoration: 'none'}}>API integrations</Link>, and <Link to="/services/cloud-infrastructure" style={{color: '#00ff7f', textDecoration: 'none'}}>enterprise-grade security</Link>. Let's transform your idea into a
-              recurring revenue machine.
-            </p>
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              justifyContent: 'center',
-              marginTop: '2rem'
-            }}>
-              {[
-                'Subscription Billing',
-                'Multi-Tenant Architecture',
-                'API Development',
-                'Real-time Analytics',
-                'User Management',
-                'Scalable Infrastructure'
-              ].map((feature, index) => (
-                <span
-                  key={index}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    background: 'rgba(0, 255, 127, 0.1)',
-                    border: '1px solid rgba(0, 255, 127, 0.3)',
-                    borderRadius: '50px',
-                    fontSize: '0.9rem',
-                    color: '#00ff7f'
-                  }}
-                >
-                  {feature}
-                </span>
-              ))}
-            </div>
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                display: 'inline-block',
-                marginTop: '2rem',
-                padding: '1rem 2rem',
-                background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
-                color: '#000',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '1.1rem',
-                boxShadow: '0 10px 30px rgba(0, 255, 127, 0.3)'
-              }}
-            >
-              Build Your SaaS →
-            </motion.a>
-          </div>
-        </motion.div>
-
-        {/* Animated background elements */}
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          left: '5%',
-          width: '100px',
-          height: '100px',
-          background: 'radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(40px)',
-          animation: 'float 6s ease-in-out infinite'
-        }} />
-        <div style={{
-          position: 'absolute',
-          bottom: '10%',
-          right: '5%',
-          width: '150px',
-          height: '150px',
-          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(40px)',
-          animation: 'float 8s ease-in-out infinite reverse'
-        }} />
-      </section>
-
       {/* Our Expertise Section */}
       <section 
         id="services-section"
@@ -1907,6 +1782,130 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* SaaS Development Section */}
+      <section style={{
+        padding: isMobile ? '3rem 1rem' : '4rem 2rem',
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1117 100%)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            textAlign: 'center',
+            position: 'relative',
+            zIndex: 1
+          }}
+        >
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(0, 255, 127, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%)',
+            border: '2px solid rgba(0, 255, 127, 0.3)',
+            borderRadius: '20px',
+            padding: isMobile ? '2rem 1.5rem' : '3rem',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 20px 60px rgba(0, 255, 127, 0.2)'
+          }}>
+            <h2 style={{
+              fontSize: isMobile ? '2rem' : '3rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              We Build SaaS Platforms Too!
+            </h2>
+            <p style={{
+              fontSize: isMobile ? '1.1rem' : '1.3rem',
+              color: '#c9d1d9',
+              marginBottom: '2rem',
+              lineHeight: '1.8'
+            }}>
+              From MVP to scale, we specialize in building robust <Link to="/services/saas-development" style={{color: '#00ff7f', textDecoration: 'none'}}>SaaS applications</Link> with subscription management,
+              multi-tenancy, <Link to="/services/ai-solutions" style={{color: '#00ff7f', textDecoration: 'none'}}>API integrations</Link>, and <Link to="/services/cloud-infrastructure" style={{color: '#00ff7f', textDecoration: 'none'}}>enterprise-grade security</Link>. Let's transform your idea into a
+              recurring revenue machine.
+            </p>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              justifyContent: 'center',
+              marginTop: '2rem'
+            }}>
+              {[
+                'Subscription Billing',
+                'Multi-Tenant Architecture',
+                'API Development',
+                'Real-time Analytics',
+                'User Management',
+                'Scalable Infrastructure'
+              ].map((feature, index) => (
+                <span
+                  key={index}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '50px',
+                    fontSize: '0.9rem',
+                    color: '#00ff7f'
+                  }}
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                display: 'inline-block',
+                marginTop: '2rem',
+                padding: '1rem 2rem',
+                background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
+                color: '#000',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '1.1rem',
+                boxShadow: '0 10px 30px rgba(0, 255, 127, 0.3)'
+              }}
+            >
+              Build Your SaaS →
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Animated background elements */}
+        <div style={{
+          position: 'absolute',
+          top: '10%',
+          left: '5%',
+          width: '100px',
+          height: '100px',
+          background: 'radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(40px)',
+          animation: 'float 6s ease-in-out infinite'
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '5%',
+          width: '150px',
+          height: '150px',
+          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(40px)',
+          animation: 'float 8s ease-in-out infinite reverse'
+        }} />
+      </section>
 
       {/* Individual Services Section */}
       <section style={{
