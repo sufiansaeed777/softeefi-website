@@ -47,7 +47,7 @@ const Contact = () => {
   useEffect(() => {
     // SEO Optimization for Contact Page - Kent Focused
     document.title = 'Contact Us Kent | Softeefi Web Development';
-    
+
     // Set meta description with Kent focus
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -58,7 +58,7 @@ const Contact = () => {
       newMetaDesc.content = 'Contact Softeefi - Local web development company in Kent. Serving Gravesend, Dartford, Maidstone, Canterbury, Sevenoaks & all Kent areas. Get a free quote within 24 hours. Call +44 7417 505744.';
       document.head.appendChild(newMetaDesc);
     }
-    
+
     // Add meta keywords with Kent focus
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -67,7 +67,7 @@ const Contact = () => {
       document.head.appendChild(metaKeywords);
     }
     metaKeywords.content = 'contact softeefi kent, web developer gravesend, web design dartford, web development maidstone, kent web developers, gravesend digital agency, dartford website design, maidstone seo services, canterbury web design, sevenoaks web developer, rochester web design, chatham digital marketing, gillingham web developer, tonbridge website design, ashford web development, folkestone digital agency, dover web design, margate website developer, ramsgate digital services, broadstairs web design, kent contact web developer, hire developer gravesend, dartford digital agency contact, maidstone web design quote, kent website quote, gravesend free consultation, dartford project inquiry, local web developer kent, near me web design kent, contact form kent, softeefi gravesend, softeefi dartford, softeefi kent';
-    
+
     // Add canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -76,7 +76,7 @@ const Contact = () => {
       document.head.appendChild(canonical);
     }
     canonical.href = 'https://softeefi.co.uk/contact';
-    
+
     // Add Open Graph tags with Kent focus
     const ogTags = [
       { property: 'og:title', content: 'Contact Softeefi Kent | Web Development Gravesend & Dartford' },
@@ -85,7 +85,7 @@ const Contact = () => {
       { property: 'og:url', content: 'https://softeefi.co.uk/contact' },
       { property: 'og:image', content: 'https://softeefi.co.uk/images/contact-og.jpg' }
     ];
-    
+
     ogTags.forEach(tag => {
       let element = document.querySelector(`meta[property="${tag.property}"]`);
       if (!element) {
@@ -95,7 +95,7 @@ const Contact = () => {
       }
       element.content = tag.content;
     });
-    
+
     // Add LocalBusiness structured data - Kent Focused
     const structuredData = {
       "@context": "https://schema.org",
@@ -147,7 +147,7 @@ const Contact = () => {
         "https://github.com/softeefi"
       ]
     };
-    
+
     let scriptTag = document.querySelector('script[type="application/ld+json"]');
     if (!scriptTag) {
       scriptTag = document.createElement('script');
@@ -787,7 +787,7 @@ const Contact = () => {
 
       </section>
 
-      {/* Kent Services Section for Local SEO */}
+      {/* COMMENTED OUT - Kent Services Section for Local Frontend Content
       <section style={{
         padding: '4rem 2rem',
         background: 'linear-gradient(180deg, rgba(0,255,127,0.03) 0%, transparent 100%)',
@@ -820,15 +820,13 @@ const Contact = () => {
             }}>
               Softeefi is Kent's premier digital agency, delivering cutting-edge solutions to businesses across Gravesend, Dartford, Maidstone, and beyond.
             </p>
-            
-            {/* Services Grid */}
+
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '2rem',
               marginBottom: '3rem'
             }}>
-              {/* Web Development */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -844,7 +842,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* AI Solutions */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -859,7 +856,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Digital Marketing */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -874,7 +870,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* UI/UX Design */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -889,7 +884,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Cloud Services */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -904,7 +898,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Mobile Apps */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(0, 255, 127, 0.2)',
@@ -920,7 +913,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Areas Served */}
             <div style={{
               textAlign: 'center',
               padding: '2rem',
@@ -939,6 +931,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
+      END COMMENTED OUT KENT SECTION */}
 
       <div className="contact-main-container">
         <motion.div 
