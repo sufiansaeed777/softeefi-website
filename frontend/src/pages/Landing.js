@@ -806,11 +806,10 @@ const Landing = () => {
       step: "1. Develop",
       askAI: true,
       portfolioImages: [
-        "/images/portfolio/gadgets-xperts/hero.webp",
-        "/images/portfolio/mxonline/demo.mp4",
-        "/images/portfolio/funfactory/screenshot1.webp",
-        "/images/portfolio/funfactory/demo.mp4",
-        "/images/portfolio/uzzi/demo-video.mp4"
+        "/images/portfolio/gadgets-xperts/hero.png",
+        "/images/portfolio/mxonline/screenshot1.png",
+        "/images/portfolio/funfactory/screenshot1.png",
+        "/images/portfolio/uzzi/hero.png"
       ]
     },
     {
@@ -823,10 +822,10 @@ const Landing = () => {
       step: "2. AI Integration",
       askAI: true,
       portfolioImages: [
-        "/images/portfolio/telegram-bot-quadra.webp",
-        "/images/portfolio/faber-ai.webp",
-        "/images/portfolio/trading-mohamad-main.webp",
-        "/images/portfolio/iboothme-main.webp"
+        "/images/portfolio/telegram-bot-quadra.png",
+        "/images/portfolio/faber-ai.png",
+        "/images/portfolio/trading-mohamad-main.png",
+        "/images/portfolio/iboothme-main.png"
       ]
     }
     // Cloud Solutions and Digital Marketing & SEO moved to footer
