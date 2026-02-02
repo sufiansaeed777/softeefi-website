@@ -474,6 +474,116 @@ const SaaSDevelopment = () => {
         </div>
       </section>
 
+      {/* SaaS Projects Showcase */}
+      <section style={{ padding: '4rem 2rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '2.5rem',
+            fontWeight: '800',
+            textAlign: 'center',
+            marginBottom: '3rem',
+            color: '#ffffff'
+          }}>
+            Our SaaS Projects
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '2rem'
+          }}>
+            {/* Smart Chat Project */}
+            <motion.a
+              href="https://smart-chat-finale.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02, y: -5 }}
+              style={{
+                textDecoration: 'none',
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '15px',
+                padding: '2rem',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{
+                marginBottom: '1rem',
+                borderRadius: '10px',
+                overflow: 'hidden',
+                height: '200px',
+                background: 'rgba(0, 255, 127, 0.05)'
+              }}>
+                <img
+                  src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
+                  alt="Smart Chat Platform Dashboard"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+              </div>
+              <h3 style={{
+                fontSize: '1.5rem',
+                color: '#00ff7f',
+                marginBottom: '1rem',
+                textAlign: 'center'
+              }}>
+                Smart Chat
+              </h3>
+              <p style={{
+                color: '#c9d1d9',
+                lineHeight: '1.8',
+                textAlign: 'center'
+              }}>
+                AI-powered chat platform with intelligent automation and real-time messaging
+              </p>
+            </motion.a>
+
+            {/* Bibot CRM WhatsApp Project */}
+            <motion.a
+              href="https://whatsapp.bibotcrm.it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02, y: -5 }}
+              style={{
+                textDecoration: 'none',
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '15px',
+                padding: '2rem',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{
+                fontSize: '4rem',
+                marginBottom: '1rem',
+                textAlign: 'center'
+              }}>
+                📱
+              </div>
+              <h3 style={{
+                fontSize: '1.5rem',
+                color: '#00ff7f',
+                marginBottom: '1rem',
+                textAlign: 'center'
+              }}>
+                Bibot CRM WhatsApp
+              </h3>
+              <p style={{
+                color: '#c9d1d9',
+                lineHeight: '1.8',
+                textAlign: 'center'
+              }}>
+                WhatsApp-integrated CRM system for customer relationship management and automation
+              </p>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section style={{
         padding: '4rem 2rem',

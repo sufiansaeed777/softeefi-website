@@ -806,11 +806,10 @@ const Landing = () => {
       step: "1. Develop",
       askAI: true,
       portfolioImages: [
-        "/images/portfolio/gadgets-xperts/hero.webp",
-        "/images/portfolio/mxonline/demo.mp4",
-        "/images/portfolio/funfactory/screenshot1.webp",
-        "/images/portfolio/funfactory/demo.mp4",
-        "/images/portfolio/uzzi/demo-video.mp4"
+        "/images/portfolio/gadgets-xperts/hero.png",
+        "/images/portfolio/mxonline/screenshot1.png",
+        "/images/portfolio/funfactory/screenshot1.png",
+        "/images/portfolio/uzzi/hero.png"
       ]
     },
     {
@@ -823,10 +822,10 @@ const Landing = () => {
       step: "2. AI Integration",
       askAI: true,
       portfolioImages: [
-        "/images/portfolio/telegram-bot-quadra.webp",
-        "/images/portfolio/faber-ai.webp",
-        "/images/portfolio/trading-mohamad-main.webp",
-        "/images/portfolio/iboothme-main.webp"
+        "/images/portfolio/telegram-bot-quadra.png",
+        "/images/portfolio/faber-ai.png",
+        "/images/portfolio/trading-mohamad-main.png",
+        "/images/portfolio/iboothme-main.png"
       ]
     }
     // Cloud Solutions and Digital Marketing & SEO moved to footer
@@ -1860,6 +1859,156 @@ const Landing = () => {
                 </span>
               ))}
             </div>
+
+            {/* SaaS Projects Showcase */}
+            <div style={{
+              marginTop: '3rem',
+              paddingTop: '2rem',
+              borderTop: '1px solid rgba(0, 255, 127, 0.2)'
+            }}>
+              <h3 style={{
+                fontSize: isMobile ? '1.5rem' : '2rem',
+                fontWeight: '600',
+                marginBottom: '2rem',
+                color: '#fff'
+              }}>
+                Our SaaS Projects
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+                gap: '1.5rem'
+              }}>
+                {/* Smart Chat */}
+                <motion.a
+                  href="https://smart-chat-finale.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '15px',
+                    padding: isMobile ? '1.5rem' : '2rem',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div style={{
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    borderRadius: '10px',
+                    height: '200px',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
+                      alt="Smart Chat Platform Dashboard"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
+                  <h4 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#00ff7f',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Smart Chat
+                  </h4>
+                  <p style={{
+                    fontSize: '0.95rem',
+                    color: '#c9d1d9',
+                    lineHeight: '1.6',
+                    marginBottom: '1rem'
+                  }}>
+                    AI-powered chat platform with real-time messaging, smart responses, and seamless user experience.
+                  </p>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#00ff7f',
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
+                  }}>
+                    View Live Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                  </div>
+                </motion.a>
+
+                {/* Bibot CRM WhatsApp */}
+                <motion.a
+                  href="https://whatsapp.bibotcrm.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '15px',
+                    padding: isMobile ? '1.5rem' : '2rem',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div style={{
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    borderRadius: '10px',
+                    height: '200px',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '3rem'
+                  }}>
+                    📱
+                  </div>
+                  <h4 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#00ff7f',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Bibot CRM WhatsApp
+                  </h4>
+                  <p style={{
+                    fontSize: '0.95rem',
+                    color: '#c9d1d9',
+                    lineHeight: '1.6',
+                    marginBottom: '1rem'
+                  }}>
+                    WhatsApp CRM integration with automated messaging, customer management, and analytics dashboard.
+                  </p>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#00ff7f',
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
+                  }}>
+                    View Live Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                  </div>
+                </motion.a>
+              </div>
+            </div>
+
             <motion.a
               href="/contact"
               whileHover={{ scale: 1.05 }}
