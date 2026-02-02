@@ -1904,9 +1904,17 @@ const Landing = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '3rem'
+                    overflow: 'hidden'
                   }}>
-                    💬
+                    <img
+                      src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
+                      alt="Smart Chat Platform Dashboard"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
                   </div>
                   <h4 style={{
                     fontSize: '1.3rem',

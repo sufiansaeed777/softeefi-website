@@ -508,11 +508,21 @@ const SaaSDevelopment = () => {
               }}
             >
               <div style={{
-                fontSize: '4rem',
                 marginBottom: '1rem',
-                textAlign: 'center'
+                borderRadius: '10px',
+                overflow: 'hidden',
+                height: '200px',
+                background: 'rgba(0, 255, 127, 0.05)'
               }}>
-                💬
+                <img
+                  src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
+                  alt="Smart Chat Platform Dashboard"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
               <h3 style={{
                 fontSize: '1.5rem',
