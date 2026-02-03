@@ -94,7 +94,7 @@ const SaaSProjects = () => {
       category: 'crm',
       title: 'Bibot CRM - WhatsApp Business Integration Platform',
       client: 'Bibot CRM',
-      duration: '1.5 months',
+      duration: '1 month',
       technologies: ['Node.js', 'React', 'WhatsApp Business API', 'PostgreSQL', 'Redis', 'Kubernetes'],
       link: 'https://whatsapp.bibotcrm.it/',
       images: [
@@ -184,6 +184,208 @@ const SaaSProjects = () => {
             Discover our enterprise-grade SaaS platforms built with cutting-edge technologies.
             From AI-powered chatbots to CRM integrations, we deliver scalable solutions.
           </p>
+        </motion.div>
+      </section>
+
+      {/* Claude Code Expertise Banner */}
+      <section style={{
+        padding: '2rem',
+        margin: '0 auto',
+        maxWidth: '1200px'
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,255,127,0.15) 0%, rgba(0,230,115,0.08) 100%)',
+            border: '2px solid rgba(0, 255, 127, 0.3)',
+            borderRadius: '20px',
+            padding: isMobile ? '2rem 1.5rem' : '3rem',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Animated background effect */}
+          <div style={{
+            position: 'absolute',
+            top: '-50%',
+            right: '-10%',
+            width: '300px',
+            height: '300px',
+            background: 'radial-gradient(circle, rgba(0,255,127,0.1) 0%, transparent 70%)',
+            borderRadius: '50%',
+            pointerEvents: 'none'
+          }} />
+
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+              marginBottom: '1.5rem',
+              flexWrap: 'wrap'
+            }}>
+              <span style={{
+                fontSize: isMobile ? '2rem' : '2.5rem'
+              }}>⚡</span>
+              <h3 style={{
+                fontSize: isMobile ? '1.5rem' : '2rem',
+                fontWeight: '800',
+                color: '#00ff7f',
+                margin: 0,
+                textAlign: 'center'
+              }}>
+                Lightning-Fast Development Without Compromise
+              </h3>
+              <span style={{
+                fontSize: isMobile ? '2rem' : '2.5rem'
+              }}>🚀</span>
+            </div>
+
+            <p style={{
+              fontSize: isMobile ? '1rem' : '1.15rem',
+              color: '#ffffff',
+              lineHeight: '1.9',
+              textAlign: 'center',
+              marginBottom: '1.5rem',
+              maxWidth: '900px',
+              margin: '0 auto 1.5rem'
+            }}>
+              <strong style={{ color: '#00ff7f' }}>Notice the short timelines?</strong> That's not a compromise on quality—it's our competitive advantage.
+              These are enterprise-grade, production-ready platforms with complex architectures, multi-tenant systems, and scalable infrastructure.
+            </p>
+
+            <div style={{
+              background: 'rgba(0, 0, 0, 0.3)',
+              padding: isMobile ? '1.5rem' : '2rem',
+              borderRadius: '15px',
+              border: '1px solid rgba(0, 255, 127, 0.2)',
+              marginBottom: '1.5rem'
+            }}>
+              <p style={{
+                fontSize: isMobile ? '1.05rem' : '1.2rem',
+                color: '#c9d1d9',
+                lineHeight: '1.8',
+                textAlign: 'center',
+                margin: 0,
+                fontWeight: '500'
+              }}>
+                <span style={{ color: '#00ff7f', fontWeight: '700' }}>Our Secret Weapon:</span> We've been power users of <strong style={{ color: '#ffffff' }}>Claude Code since day one of its launch</strong>—mastering AI-assisted development
+                to deliver what typically takes 6-12 months in just 1-2 months. We don't just use AI tools; we've pioneered workflows
+                that multiply our team's capabilities <strong style={{ color: '#00ff7f' }}>by 10x</strong>.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+              gap: '1.5rem',
+              marginTop: '2rem'
+            }}>
+              <div style={{
+                textAlign: 'center',
+                padding: '1.5rem',
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  marginBottom: '0.5rem'
+                }}>🎯</div>
+                <h4 style={{
+                  color: '#00ff7f',
+                  fontSize: '1.1rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: '700'
+                }}>10x Speed</h4>
+                <p style={{
+                  color: '#c9d1d9',
+                  fontSize: '0.95rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Complex projects delivered in weeks, not months
+                </p>
+              </div>
+
+              <div style={{
+                textAlign: 'center',
+                padding: '1.5rem',
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  marginBottom: '0.5rem'
+                }}>🏆</div>
+                <h4 style={{
+                  color: '#00ff7f',
+                  fontSize: '1.1rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: '700'
+                }}>Day-One Experts</h4>
+                <p style={{
+                  color: '#c9d1d9',
+                  fontSize: '0.95rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Using Claude Code since launch, pioneering best practices
+                </p>
+              </div>
+
+              <div style={{
+                textAlign: 'center',
+                padding: '1.5rem',
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  marginBottom: '0.5rem'
+                }}>💎</div>
+                <h4 style={{
+                  color: '#00ff7f',
+                  fontSize: '1.1rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: '700'
+                }}>Zero Compromise</h4>
+                <p style={{
+                  color: '#c9d1d9',
+                  fontSize: '0.95rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Enterprise-grade quality with startup speed
+                </p>
+              </div>
+            </div>
+
+            <div style={{
+              marginTop: '2rem',
+              textAlign: 'center',
+              padding: '1.5rem',
+              background: 'linear-gradient(135deg, rgba(0,255,127,0.1) 0%, transparent 100%)',
+              borderRadius: '12px'
+            }}>
+              <p style={{
+                color: '#ffffff',
+                fontSize: isMobile ? '0.95rem' : '1.05rem',
+                lineHeight: '1.7',
+                margin: 0,
+                fontStyle: 'italic'
+              }}>
+                <strong style={{ color: '#00ff7f' }}>Result:</strong> You get production-ready, scalable SaaS platforms with sophisticated features—
+                multi-tenant architecture, real-time functionality, AI integration, analytics dashboards, and complete backend systems—
+                all delivered in timeframes that seem impossible with traditional development.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </section>
 

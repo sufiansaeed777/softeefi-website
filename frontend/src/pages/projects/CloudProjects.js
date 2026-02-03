@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import ClaudeCodeBadge from '../../components/ClaudeCodeBadge';
 
 const CloudProjects = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -347,7 +348,9 @@ const CloudProjects = () => {
           overflow: 'hidden'
         }}
       >
-        <motion.h1 
+        <ClaudeCodeBadge variant="banner" isMobile={isMobile} />
+
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}

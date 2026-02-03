@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ClaudeCodeBadge from '../../components/ClaudeCodeBadge';
 
 // Debounce utility function
 const debounce = (func, wait) => {
@@ -1095,6 +1096,10 @@ const AISolutions = () => {
             margin: '0 auto'
           }}
         >
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+            <ClaudeCodeBadge variant="banner" isMobile={isMobile} />
+          </div>
+
           <h2 style={{
             fontSize: isMobile ? 'clamp(1.75rem, 7vw, 2.5rem)' : 'clamp(2.5rem, 6vw, 5rem)',
             fontWeight: '900',

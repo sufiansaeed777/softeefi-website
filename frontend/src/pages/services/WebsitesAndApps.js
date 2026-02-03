@@ -8,6 +8,7 @@ import { MdSecurity, MdSpeed, MdVerified } from 'react-icons/md';
 import { SiReact, SiNodedotjs, SiMongodb, SiAmazonaws, SiFlutter } from 'react-icons/si';
 import AskAIModal from '../../components/AskAIModal';
 import ProjectModal from '../../components/ProjectModal';
+import ClaudeCodeBadge from '../../components/ClaudeCodeBadge';
 import '../../styles/websites-apps-mobile.css';
 
 const WebsitesAndApps = () => {
@@ -1538,6 +1539,8 @@ const WebsitesAndApps = () => {
             marginBottom: '4rem'
           }}
         >
+          <ClaudeCodeBadge variant="banner" isMobile={isMobile} />
+
           <h2 style={{
             fontSize: isMobile ? '2.5rem' : '3.5rem',
             fontWeight: '800',

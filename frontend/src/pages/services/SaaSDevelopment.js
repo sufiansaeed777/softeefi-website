@@ -477,6 +477,50 @@ const SaaSDevelopment = () => {
       {/* SaaS Projects Showcase */}
       <section style={{ padding: '4rem 2rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          {/* Claude Code Efficiency Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '2rem'
+            }}
+          >
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '1rem',
+              padding: '1rem 2rem',
+              background: 'linear-gradient(135deg, rgba(0,255,127,0.2) 0%, rgba(0,230,115,0.1) 100%)',
+              border: '2px solid rgba(0, 255, 127, 0.4)',
+              borderRadius: '50px',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <span style={{ fontSize: '1.8rem' }}>⚡</span>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{
+                  fontSize: '0.9rem',
+                  fontWeight: '700',
+                  color: '#00ff7f',
+                  letterSpacing: '0.5px'
+                }}>
+                  POWERED BY CLAUDE CODE
+                </div>
+                <div style={{
+                  fontSize: '0.8rem',
+                  color: '#c9d1d9',
+                  marginTop: '3px'
+                }}>
+                  10x Speed • Enterprise Quality • Since Day One
+                </div>
+              </div>
+              <span style={{ fontSize: '1.8rem' }}>🚀</span>
+            </div>
+          </motion.div>
+
           <h2 style={{
             fontSize: '2.5rem',
             fontWeight: '800',
