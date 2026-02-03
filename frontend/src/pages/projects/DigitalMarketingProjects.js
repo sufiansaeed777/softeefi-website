@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import ClaudeCodeBadge from '../../components/ClaudeCodeBadge';
 
 const DigitalMarketingProjects = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -346,6 +347,8 @@ const DigitalMarketingProjects = () => {
     }}>
       {/* Hero Section */}
       <section style={{ padding: isMobile ? '2rem 1rem' : '4rem 2rem', textAlign: 'center' }}>
+        <ClaudeCodeBadge variant="banner" isMobile={isMobile} />
+
         <motion.h1
           initial="hidden"
           animate="visible"

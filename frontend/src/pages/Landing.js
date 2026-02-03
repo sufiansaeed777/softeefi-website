@@ -1866,6 +1866,45 @@ const Landing = () => {
               paddingTop: '2rem',
               borderTop: '1px solid rgba(0, 255, 127, 0.2)'
             }}>
+              {/* Claude Code Efficiency Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  padding: '0.75rem 1.5rem',
+                  background: 'linear-gradient(135deg, rgba(0,255,127,0.2) 0%, rgba(0,230,115,0.1) 100%)',
+                  border: '2px solid rgba(0, 255, 127, 0.4)',
+                  borderRadius: '50px',
+                  marginBottom: '1.5rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <span style={{ fontSize: '1.5rem' }}>⚡</span>
+                <div>
+                  <div style={{
+                    fontSize: '0.85rem',
+                    fontWeight: '700',
+                    color: '#00ff7f',
+                    letterSpacing: '0.5px'
+                  }}>
+                    POWERED BY CLAUDE CODE
+                  </div>
+                  <div style={{
+                    fontSize: '0.75rem',
+                    color: '#c9d1d9',
+                    marginTop: '2px'
+                  }}>
+                    10x Faster • Zero Compromise • Day-One Experts
+                  </div>
+                </div>
+              </motion.div>
+
               <h3 style={{
                 fontSize: isMobile ? '1.5rem' : '2rem',
                 fontWeight: '600',
@@ -2006,6 +2045,32 @@ const Landing = () => {
                     </svg>
                   </div>
                 </motion.a>
+              </div>
+
+              {/* View All Projects Button */}
+              <div style={{
+                textAlign: 'center',
+                marginTop: '2rem'
+              }}>
+                <Link to="/projects/saas">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                      padding: '1rem 2rem',
+                      background: 'rgba(0, 255, 127, 0.1)',
+                      border: '2px solid #00ff7f',
+                      borderRadius: '50px',
+                      color: '#00ff7f',
+                      fontWeight: '600',
+                      fontSize: '1rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    View All SaaS Projects →
+                  </motion.button>
+                </Link>
               </div>
             </div>
 

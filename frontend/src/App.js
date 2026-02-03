@@ -41,6 +41,7 @@ const SaaSDevelopment = lazy(() => import('./pages/services/SaaSDevelopment'));
 // Project Pages
 const CloudProjects = lazy(() => import('./pages/projects/CloudProjects'));
 const DigitalMarketingProjects = lazy(() => import('./pages/projects/DigitalMarketingProjects'));
+const SaaSProjects = lazy(() => import('./pages/projects/SaaSProjects'));
 
 // Footer Pages
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -186,6 +187,7 @@ function App() {
             {/* Project Pages Routes */}
             <Route path="/projects/cloud-infrastructure" element={<CloudProjects />} />
             <Route path="/projects/digital-marketing" element={<DigitalMarketingProjects />} />
+            <Route path="/projects/saas" element={<SaaSProjects />} />
 
             {/* Footer Link Routes - Add as needed */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
