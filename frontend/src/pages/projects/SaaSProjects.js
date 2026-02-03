@@ -45,7 +45,7 @@ const SaaSProjects = () => {
       category: 'chatbot',
       title: 'Smart Chat - AI-Powered ChatBot Platform',
       client: 'ChatBot Pro',
-      duration: '4 months',
+      duration: '2 months',
       technologies: ['React', 'Node.js', 'MongoDB', 'OpenAI API', 'WebSocket', 'Redis', 'Docker'],
       link: 'https://smart-chat-finale.vercel.app/',
       images: [
@@ -94,7 +94,7 @@ const SaaSProjects = () => {
       category: 'crm',
       title: 'Bibot CRM - WhatsApp Business Integration Platform',
       client: 'Bibot CRM',
-      duration: '3 months',
+      duration: '1.5 months',
       technologies: ['Node.js', 'React', 'WhatsApp Business API', 'PostgreSQL', 'Redis', 'Kubernetes'],
       link: 'https://whatsapp.bibotcrm.it/',
       images: [
