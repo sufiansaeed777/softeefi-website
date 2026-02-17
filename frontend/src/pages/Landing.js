@@ -1140,6 +1140,346 @@ const Landing = () => {
         )}
       </section>
 
+      {/* SaaS Development Section */}
+      <section style={{
+        padding: isMobile ? '3rem 1rem' : '4rem 2rem',
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1117 100%)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            textAlign: 'center',
+            position: 'relative',
+            zIndex: 1
+          }}
+        >
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(0, 255, 127, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%)',
+            border: '2px solid rgba(0, 255, 127, 0.3)',
+            borderRadius: '20px',
+            padding: isMobile ? '2rem 1.5rem' : '3rem',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 20px 60px rgba(0, 255, 127, 0.2)'
+          }}>
+            <h2 style={{
+              fontSize: isMobile ? '2rem' : '3rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              We Build SaaS Platforms Too!
+            </h2>
+            <p style={{
+              fontSize: isMobile ? '1.1rem' : '1.3rem',
+              color: '#c9d1d9',
+              marginBottom: '2rem',
+              lineHeight: '1.8'
+            }}>
+              From MVP to scale, we specialize in building robust <Link to="/services/saas-development" style={{color: '#00ff7f', textDecoration: 'none'}}>SaaS applications</Link> with subscription management,
+              multi-tenancy, <Link to="/services/ai-solutions" style={{color: '#00ff7f', textDecoration: 'none'}}>API integrations</Link>, and <Link to="/services/cloud-infrastructure" style={{color: '#00ff7f', textDecoration: 'none'}}>enterprise-grade security</Link>. Let's transform your idea into a
+              recurring revenue machine.
+            </p>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              justifyContent: 'center',
+              marginTop: '2rem'
+            }}>
+              {[
+                'Subscription Billing',
+                'Multi-Tenant Architecture',
+                'API Development',
+                'Real-time Analytics',
+                'User Management',
+                'Scalable Infrastructure'
+              ].map((feature, index) => (
+                <span
+                  key={index}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '50px',
+                    fontSize: '0.9rem',
+                    color: '#00ff7f'
+                  }}
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+
+            {/* SaaS Projects Showcase */}
+            <div style={{
+              marginTop: '3rem',
+              paddingTop: '2rem',
+              borderTop: '1px solid rgba(0, 255, 127, 0.2)'
+            }}>
+              {/* Claude Code Efficiency Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  padding: '0.75rem 1.5rem',
+                  background: 'linear-gradient(135deg, rgba(0,255,127,0.2) 0%, rgba(0,230,115,0.1) 100%)',
+                  border: '2px solid rgba(0, 255, 127, 0.4)',
+                  borderRadius: '50px',
+                  marginBottom: '1.5rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <span style={{ fontSize: '1.5rem' }}>⚡</span>
+                <div>
+                  <div style={{
+                    fontSize: '0.85rem',
+                    fontWeight: '700',
+                    color: '#00ff7f',
+                    letterSpacing: '0.5px'
+                  }}>
+                    POWERED BY CLAUDE CODE
+                  </div>
+                  <div style={{
+                    fontSize: '0.75rem',
+                    color: '#c9d1d9',
+                    marginTop: '2px'
+                  }}>
+                    10x Faster • Zero Compromise • Day-One Experts
+                  </div>
+                </div>
+              </motion.div>
+
+              <h3 style={{
+                fontSize: isMobile ? '1.5rem' : '2rem',
+                fontWeight: '600',
+                marginBottom: '2rem',
+                color: '#fff'
+              }}>
+                Our SaaS Projects
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+                gap: '1.5rem'
+              }}>
+                {/* Smart Chat */}
+                <motion.a
+                  href="https://smart-chat-finale.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '15px',
+                    padding: isMobile ? '1.5rem' : '2rem',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div style={{
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    borderRadius: '10px',
+                    height: '200px',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
+                      alt="Smart Chat Platform Dashboard"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
+                  <h4 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#00ff7f',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Smart Chat
+                  </h4>
+                  <p style={{
+                    fontSize: '0.95rem',
+                    color: '#c9d1d9',
+                    lineHeight: '1.6',
+                    marginBottom: '1rem'
+                  }}>
+                    AI-powered chat platform with real-time messaging, smart responses, and seamless user experience.
+                  </p>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#00ff7f',
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
+                  }}>
+                    View Live Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                  </div>
+                </motion.a>
+
+                {/* Bibot CRM WhatsApp */}
+                <motion.a
+                  href="https://whatsapp.bibotcrm.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(0, 255, 127, 0.3)',
+                    borderRadius: '15px',
+                    padding: isMobile ? '1.5rem' : '2rem',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div style={{
+                    background: 'rgba(0, 255, 127, 0.1)',
+                    borderRadius: '10px',
+                    height: '200px',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '3rem'
+                  }}>
+                    📱
+                  </div>
+                  <h4 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#00ff7f',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Bibot CRM WhatsApp
+                  </h4>
+                  <p style={{
+                    fontSize: '0.95rem',
+                    color: '#c9d1d9',
+                    lineHeight: '1.6',
+                    marginBottom: '1rem'
+                  }}>
+                    WhatsApp CRM integration with automated messaging, customer management, and analytics dashboard.
+                  </p>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#00ff7f',
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
+                  }}>
+                    View Live Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                  </div>
+                </motion.a>
+              </div>
+
+              {/* View All Projects Button */}
+              <div style={{
+                textAlign: 'center',
+                marginTop: '2rem'
+              }}>
+                <Link to="/projects/saas">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                      padding: '1rem 2rem',
+                      background: 'rgba(0, 255, 127, 0.1)',
+                      border: '2px solid #00ff7f',
+                      borderRadius: '50px',
+                      color: '#00ff7f',
+                      fontWeight: '600',
+                      fontSize: '1rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    View All SaaS Projects →
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
+
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                display: 'inline-block',
+                marginTop: '2rem',
+                padding: '1rem 2rem',
+                background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
+                color: '#000',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '1.1rem',
+                boxShadow: '0 10px 30px rgba(0, 255, 127, 0.3)'
+              }}
+            >
+              Build Your SaaS →
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Animated background elements */}
+        <div style={{
+          position: 'absolute',
+          top: '10%',
+          left: '5%',
+          width: '100px',
+          height: '100px',
+          background: 'radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(40px)',
+          animation: 'float 6s ease-in-out infinite'
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '5%',
+          width: '150px',
+          height: '150px',
+          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(40px)',
+          animation: 'float 8s ease-in-out infinite reverse'
+        }} />
+      </section>
+
       {/* Our Expertise Section */}
       <section 
         id="services-section"
@@ -1779,346 +2119,6 @@ const Landing = () => {
             })}
           </div>
         </div>
-      </section>
-
-      {/* SaaS Development Section */}
-      <section style={{
-        padding: isMobile ? '3rem 1rem' : '4rem 2rem',
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1117 100%)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            textAlign: 'center',
-            position: 'relative',
-            zIndex: 1
-          }}
-        >
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(0, 255, 127, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%)',
-            border: '2px solid rgba(0, 255, 127, 0.3)',
-            borderRadius: '20px',
-            padding: isMobile ? '2rem 1.5rem' : '3rem',
-            backdropFilter: 'blur(10px)',
-            boxShadow: '0 20px 60px rgba(0, 255, 127, 0.2)'
-          }}>
-            <h2 style={{
-              fontSize: isMobile ? '2rem' : '3rem',
-              fontWeight: '700',
-              marginBottom: '1rem',
-              background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              We Build SaaS Platforms Too!
-            </h2>
-            <p style={{
-              fontSize: isMobile ? '1.1rem' : '1.3rem',
-              color: '#c9d1d9',
-              marginBottom: '2rem',
-              lineHeight: '1.8'
-            }}>
-              From MVP to scale, we specialize in building robust <Link to="/services/saas-development" style={{color: '#00ff7f', textDecoration: 'none'}}>SaaS applications</Link> with subscription management,
-              multi-tenancy, <Link to="/services/ai-solutions" style={{color: '#00ff7f', textDecoration: 'none'}}>API integrations</Link>, and <Link to="/services/cloud-infrastructure" style={{color: '#00ff7f', textDecoration: 'none'}}>enterprise-grade security</Link>. Let's transform your idea into a
-              recurring revenue machine.
-            </p>
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              justifyContent: 'center',
-              marginTop: '2rem'
-            }}>
-              {[
-                'Subscription Billing',
-                'Multi-Tenant Architecture',
-                'API Development',
-                'Real-time Analytics',
-                'User Management',
-                'Scalable Infrastructure'
-              ].map((feature, index) => (
-                <span
-                  key={index}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    background: 'rgba(0, 255, 127, 0.1)',
-                    border: '1px solid rgba(0, 255, 127, 0.3)',
-                    borderRadius: '50px',
-                    fontSize: '0.9rem',
-                    color: '#00ff7f'
-                  }}
-                >
-                  {feature}
-                </span>
-              ))}
-            </div>
-
-            {/* SaaS Projects Showcase */}
-            <div style={{
-              marginTop: '3rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(0, 255, 127, 0.2)'
-            }}>
-              {/* Claude Code Efficiency Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.75rem',
-                  padding: '0.75rem 1.5rem',
-                  background: 'linear-gradient(135deg, rgba(0,255,127,0.2) 0%, rgba(0,230,115,0.1) 100%)',
-                  border: '2px solid rgba(0, 255, 127, 0.4)',
-                  borderRadius: '50px',
-                  marginBottom: '1.5rem',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-              >
-                <span style={{ fontSize: '1.5rem' }}>⚡</span>
-                <div>
-                  <div style={{
-                    fontSize: '0.85rem',
-                    fontWeight: '700',
-                    color: '#00ff7f',
-                    letterSpacing: '0.5px'
-                  }}>
-                    POWERED BY CLAUDE CODE
-                  </div>
-                  <div style={{
-                    fontSize: '0.75rem',
-                    color: '#c9d1d9',
-                    marginTop: '2px'
-                  }}>
-                    10x Faster • Zero Compromise • Day-One Experts
-                  </div>
-                </div>
-              </motion.div>
-
-              <h3 style={{
-                fontSize: isMobile ? '1.5rem' : '2rem',
-                fontWeight: '600',
-                marginBottom: '2rem',
-                color: '#fff'
-              }}>
-                Our SaaS Projects
-              </h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-                gap: '1.5rem'
-              }}>
-                {/* Smart Chat */}
-                <motion.a
-                  href="https://smart-chat-finale.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(0, 255, 127, 0.3)',
-                    borderRadius: '15px',
-                    padding: isMobile ? '1.5rem' : '2rem',
-                    textDecoration: 'none',
-                    display: 'block',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <div style={{
-                    background: 'rgba(0, 255, 127, 0.1)',
-                    borderRadius: '10px',
-                    height: '200px',
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    overflow: 'hidden'
-                  }}>
-                    <img
-                      src="/images/portfolio/smartchat/Screenshot 2026-02-02 074459.png"
-                      alt="Smart Chat Platform Dashboard"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover'
-                      }}
-                    />
-                  </div>
-                  <h4 style={{
-                    fontSize: '1.3rem',
-                    fontWeight: '600',
-                    color: '#00ff7f',
-                    marginBottom: '0.5rem'
-                  }}>
-                    Smart Chat
-                  </h4>
-                  <p style={{
-                    fontSize: '0.95rem',
-                    color: '#c9d1d9',
-                    lineHeight: '1.6',
-                    marginBottom: '1rem'
-                  }}>
-                    AI-powered chat platform with real-time messaging, smart responses, and seamless user experience.
-                  </p>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: '#00ff7f',
-                    fontSize: '0.9rem',
-                    fontWeight: '500'
-                  }}>
-                    View Live Demo
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                    </svg>
-                  </div>
-                </motion.a>
-
-                {/* Bibot CRM WhatsApp */}
-                <motion.a
-                  href="https://whatsapp.bibotcrm.it/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(0, 255, 127, 0.3)',
-                    borderRadius: '15px',
-                    padding: isMobile ? '1.5rem' : '2rem',
-                    textDecoration: 'none',
-                    display: 'block',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <div style={{
-                    background: 'rgba(0, 255, 127, 0.1)',
-                    borderRadius: '10px',
-                    height: '200px',
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '3rem'
-                  }}>
-                    📱
-                  </div>
-                  <h4 style={{
-                    fontSize: '1.3rem',
-                    fontWeight: '600',
-                    color: '#00ff7f',
-                    marginBottom: '0.5rem'
-                  }}>
-                    Bibot CRM WhatsApp
-                  </h4>
-                  <p style={{
-                    fontSize: '0.95rem',
-                    color: '#c9d1d9',
-                    lineHeight: '1.6',
-                    marginBottom: '1rem'
-                  }}>
-                    WhatsApp CRM integration with automated messaging, customer management, and analytics dashboard.
-                  </p>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: '#00ff7f',
-                    fontSize: '0.9rem',
-                    fontWeight: '500'
-                  }}>
-                    View Live Demo
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                    </svg>
-                  </div>
-                </motion.a>
-              </div>
-
-              {/* View All Projects Button */}
-              <div style={{
-                textAlign: 'center',
-                marginTop: '2rem'
-              }}>
-                <Link to="/projects/saas">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                      padding: '1rem 2rem',
-                      background: 'rgba(0, 255, 127, 0.1)',
-                      border: '2px solid #00ff7f',
-                      borderRadius: '50px',
-                      color: '#00ff7f',
-                      fontWeight: '600',
-                      fontSize: '1rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                  >
-                    View All SaaS Projects →
-                  </motion.button>
-                </Link>
-              </div>
-            </div>
-
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                display: 'inline-block',
-                marginTop: '2rem',
-                padding: '1rem 2rem',
-                background: 'linear-gradient(135deg, #00ff7f 0%, #00d4ff 100%)',
-                color: '#000',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '1.1rem',
-                boxShadow: '0 10px 30px rgba(0, 255, 127, 0.3)'
-              }}
-            >
-              Build Your SaaS →
-            </motion.a>
-          </div>
-        </motion.div>
-
-        {/* Animated background elements */}
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          left: '5%',
-          width: '100px',
-          height: '100px',
-          background: 'radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(40px)',
-          animation: 'float 6s ease-in-out infinite'
-        }} />
-        <div style={{
-          position: 'absolute',
-          bottom: '10%',
-          right: '5%',
-          width: '150px',
-          height: '150px',
-          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(40px)',
-          animation: 'float 8s ease-in-out infinite reverse'
-        }} />
       </section>
 
       {/* Individual Services Section */}
