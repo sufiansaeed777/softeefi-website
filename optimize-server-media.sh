@@ -6,7 +6,7 @@ echo ""
 # SSH into server and run optimizations
 ssh daniel@138.68.184.53 << 'EOF'
 echo "Connected to server..."
-cd /var/www/softeefi/frontend/build/images
+cd /var/www/softeefi-git/frontend/build/images
 
 echo "Step 1: Converting PNG/JPG to WebP..."
 echo "danielimad" | sudo -S bash -c 'for img in $(find . -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \)); do 
@@ -45,21 +45,21 @@ if [ -f "portfolio/mxonline/demo.mov" ]; then
 fi
 
 echo ""
-echo "Step 4: Removing original PNG/JPG files..."
-echo "danielimad" | sudo -S find . -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -delete
+echo "Step 4: Keeping PNG/JPG originals (code references both .png and .webp)."
+echo "        Originals are needed as fallbacks and for hero/<picture> sources."
 
 echo ""
 echo "Step 5: Setting correct permissions..."
-echo "danielimad" | sudo -S chown -R www-data:www-data /var/www/softeefi/frontend/build/
+echo "danielimad" | sudo -S chown -R www-data:www-data /var/www/softeefi-git/frontend/build/
 
 echo ""
 echo "=== Optimization Complete ==="
-echo "PNG/JPG remaining: $(find . -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) | wc -l)"
+echo "PNG/JPG kept: $(find . -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) | wc -l)"
 echo "WebP files: $(find . -type f -name '*.webp' | wc -l)"
 echo "Video files: $(find . -type f \( -name '*.mp4' -o -name '*.mov' -o -name '*.webm' \) -exec du -h {} \; | sort -h)"
 echo ""
 echo "Total size of images directory:"
-du -sh /var/www/softeefi/frontend/build/images
+du -sh /var/www/softeefi-git/frontend/build/images
 EOF
 
 echo ""
