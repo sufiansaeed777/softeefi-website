@@ -1,12 +1,13 @@
 # Robots.txt for softeefi.co.uk
-# Last updated: 2025
+# Last updated: 2026-05
 
 # Allow all search engines
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin
 Disallow: /admin/
-Disallow: /*.json$
+Disallow: /analytics
 Disallow: /static/js/
 Disallow: /static/css/
 
