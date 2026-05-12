@@ -25,6 +25,7 @@
     "start": "craco start",
     "start:react": "react-scripts start",
     "build": "craco build",
+    "postbuild": "node scripts/generate-seo-html.js",
     "build:fast": "react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject",
