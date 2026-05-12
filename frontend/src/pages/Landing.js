@@ -1176,7 +1176,7 @@ const Landing = () => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              We Build SaaS Platforms Too!
+              We Build Production SaaS Platforms
             </h2>
             <p style={{
               fontSize: isMobile ? '1.1rem' : '1.3rem',
